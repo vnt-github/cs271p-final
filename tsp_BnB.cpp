@@ -37,7 +37,7 @@ void readInputFile()
     string input_filename("");
     cout << "Enter the input filename: ";
     cin >> input_filename;
-    fstream input_file(dir_path+input_filename);
+    fstream input_file(dir_path+input_filename+".txt");
     if(input_file.is_open()) {
         initGraph(input_file);
         input_file.close();
@@ -56,12 +56,13 @@ void printGraphInfo(vector<vector<double>> graph)
     }
 }
 
-void dfs(vector<vector<double>> graph, set<int>& visited, int cur_vertex, int cost, int& lower_bound)
+void dfs(vector<vector<double>> graph, set<int>& visited, int cur_vertex, double cost, double& lower_bound)
 {
     visited.insert(cur_vertex);
     cout << "cur_vertex: " << cur_vertex << endl;
     if(cost>=lower_bound)
         return;
+
     if(visited.size()==graph.size()) {
         cost += graph[cur_vertex][0];
         // cout << "graph[cur_vertex][0]: " << graph[cur_vertex][0] << endl;
@@ -72,6 +73,7 @@ void dfs(vector<vector<double>> graph, set<int>& visited, int cur_vertex, int co
             return;
         }
     }
+
     for(int i=0; i<graph[cur_vertex].size(); i++) {
         if(visited.find(i)==visited.end()) {
             cost += graph[cur_vertex][i];
@@ -84,10 +86,10 @@ void dfs(vector<vector<double>> graph, set<int>& visited, int cur_vertex, int co
     }
 }
 
-int branch_and_bound(vector<vector<double>> graph)
+double branch_and_bound(vector<vector<double>> graph)
 {
     set<int> visited;
-    int cost = 0, lower_bound = INT_MAX;
+    double cost = 0, lower_bound = INT_MAX;
     dfs(graph, visited, 0, cost, lower_bound);
     return lower_bound;
 }
@@ -105,7 +107,7 @@ int main()
     // step 1. compute the upper bound
 
     // step 2. branch and bound algorithm
-    int minimum_path_cost = branch_and_bound(graph);
+    double minimum_path_cost = branch_and_bound(graph);
     cout << "minimum_cost: " << minimum_path_cost << "\n";
 
     return 0;
