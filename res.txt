@@ -1,0 +1,87 @@
+no_vars = 100
+cnf = [(i, ) for i in range(1, no_vars + 1)]
+print(maxWalkSAT(no_vars, cnf, 120, 500, 0.5))
+print(maxWalkSAT(no_vars, cnf, 120, 500, 0.75))
+print(maxWalkSAT(no_vars, cnf, 120, 500, 1))
+
+
+(48, 120.03564500808716)
+[False, False, True, False, False, False, False, True, True, True, False, True, False, False, True, False, True, False, True, True, False, True, False, True, False, True, False, False, True, False, False, True, False, True, False, True, False, True, False, True, False, True, False, False, False, False, False, True, True, False, True, True, True, True, True, True, False, False, False, False, False, True, False, False, True, True, True, True, True, True, True, True, True, True, True, False, False, True, False, True, True, False, True, False, False, False, False, False, False, True, False, False, False, False, False, False, True, False, True, True]
+^B(48, 120.0135509967804)
+[True, False, True, False, False, False, False, True, True, False, True, False, False, True, True, True, True, True, True, True, True, True, False, False, True, False, True, False, False, True, True, False, True, False, False, False, False, True, True, True, False, True, True, False, True, True, True, False, True, False, True, False, True, False, False, False, False, False, True, False, True, True, True, True, True, False, False, True, True, False, True, True, False, True, True, True, True, True, True, True, True, False, False, False, False, True, True, False, False, True, True, True, False, False, False, False, True, False, False, True]
+(52, 120.03611707687378)
+[True, False, False, False, False, False, False, True, False, True, False, False, True, True, False, False, False, False, True, False, False, True, True, True, False, False, False, False, True, True, True, False, False, False, False, True, False, False, True, False, True, False, False, False, True, False, True, False, False, False, False, False, False, True, True, False, False, True, False, True, True, False, True, True, False, True, False, False, True, False, True, False, True, True, True, False, True, True, False, True, False, False, True, True, False, False, True, False, False, True, False, False, False, True, False, True, True, False, True, False]
+
+
+no_vars = 20
+cnf = [(i, ) for i in range(1, no_vars + 1)]
+print(maxWalkSAT(no_vars, cnf, 120, 500, 0.5))
+print(maxWalkSAT(no_vars, cnf, 120, 500, 0.75))
+print(maxWalkSAT(no_vars, cnf, 120, 500, 1))
+
+vnt@vnt-rog:/mnt/c/cs271p-final$ python maxSAT.py 
+(12, 120.00113105773926)
+[True, False, True, False, False, False, False, True, False, False, True, True, False, False, True, False, False, True, True, False]
+(10, 120.00725793838501)
+[False, False, False, False, True, False, True, False, False, False, False, True, False, False, True, False, True, True, False, False]
+(12, 120.00697803497314)
+[True, True, False, False, True, False, True, False, False, False, True, True, True, True, True, False, True, False, True, True]
+
+no_vars = 10
+cnf = [(i, ) for i in range(1, no_vars + 1)]
+print(maxWalkSAT(no_vars, cnf, 120, 10000, 0.5))
+print(maxWalkSAT(no_vars, cnf, 120, 10000, 0.75))
+print(maxWalkSAT(no_vars, cnf, 120, 10000, 1))
+
+vnt@vnt-rog:/mnt/c/cs271p-final$ python maxSAT.py 
+(0, 64.4864010810852)
+[True, True, True, True, True, True, True, True, True, True]
+(4, 120.08214902877808)
+[False, True, True, True, False, True, False, True, True, False]
+(5, 120.04338693618774)
+[False, False, False, False, True, False, False, False, False, False]
+
+no_vars = 10
+cnf = [(i, ) for i in range(1, no_vars + 1)]
+print(maxWalkSAT(no_vars, cnf, 120, 100, 0.5))
+print(maxWalkSAT(no_vars, cnf, 120, 100, 0.75))
+print(maxWalkSAT(no_vars, cnf, 120, 100, 1))
+
+vnt@vnt-rog:/mnt/c/cs271p-final$ python maxSAT.py 
+(0, 64.4864010810852)
+[True, True, True, True, True, True, True, True, True, True]
+(4, 120.08214902877808)
+[False, True, True, True, False, True, False, True, True, False]
+(5, 120.04338693618774)
+[False, False, False, False, True, False, False, False, False, False]
+
+no_vars = 20
+cnf = [(i, ) for i in range(1, no_vars + 1)]
+print(maxWalkSAT(no_vars, cnf, 120, 100, 0.5))
+print(maxWalkSAT(no_vars, cnf, 120, 100, 0.75))
+print(maxWalkSAT(no_vars, cnf, 120, 100, 1))
+
+
+vnt@vnt-rog:/mnt/c/cs271p-final$ python maxSAT.py 
+(10, 120.00149202346802)
+[False, True, True, False, False, True, True, False, True, False, False, False, True, False, False, True, False, True, True, False]
+(15, 120.00004982948303)
+[True, False, False, True, False, True, False, True, True, True, True, True, True, True, False, False, False, True, False, True]
+(9, 120.00159001350403)
+[True, True, False, False, True, False, True, True, False, False, True, True, False, True, False, True, False, False, True, True]
+
+
+no_vars = 14
+cnf = [(i, ) for i in range(1, no_vars + 1)]
+print(maxWalkSAT(no_vars, cnf, 120, 100, 0.5))
+print(maxWalkSAT(no_vars, cnf, 120, 100, 0.75))
+print(maxWalkSAT(no_vars, cnf, 120, 100, 1))
+
+
+vnt@vnt-rog:/mnt/c/cs271p-final$ python maxSAT.py 
+(0, 10.751346111297607)
+[True, True, True, True, True, True, True, True, True, True, True, True, True, True]
+(0, 3.547699213027954)
+[True, True, True, True, True, True, True, True, True, True, True, True, True, True]
+(0, 70.3027172088623)
+[True, True, True, True, True, True, True, True, True, True, True, True, True, True]

@@ -49,6 +49,7 @@ def getGreedyClauseVar(cnf, assignment, clause):
     return best_var
 
 def maxWalkSAT(no_vars, cnf, timeout_duration_sec, max_flips, noise=0.5):
+    init = time()
     timeout = time() + timeout_duration_sec
     best_assignment = None
     while time() < timeout:
@@ -60,6 +61,7 @@ def maxWalkSAT(no_vars, cnf, timeout_duration_sec, max_flips, noise=0.5):
         for _ in range(max_flips):
             if objective_function(cnf, curr_assignment) == 0:
                 best_assignment = curr_assignment
+                print(objective_function(cnf, curr_assignment), time()-init)
                 return best_assignment[1:]
         
             clause = getRandomUnsatisfiedClause(cnf, curr_assignment)
@@ -77,6 +79,7 @@ def maxWalkSAT(no_vars, cnf, timeout_duration_sec, max_flips, noise=0.5):
             if objective_function(cnf, curr_assignment) < objective_function(cnf, best_assignment):
                 best_assignment = curr_assignment
 
+    print(objective_function(cnf, curr_assignment), time()-init)
     return best_assignment[1:]
 
 
@@ -98,8 +101,15 @@ if __name__ == "__main__":
     # cnf = [(3, -1), (-3, 2)]
     # print(maxWalkSAT(no_vars, cnf, 120, 1000))
 
-    # no_vars = 6
-    # cnf = [(i, ) for i in range(1, 7)]
+    # NOTE: use below to test the performance
+    # no_vars = 14
+    # cnf = [(i, ) for i in range(1, no_vars + 1)]
+    # print(maxWalkSAT(no_vars, cnf, 120, 100, 0.5))
+    # print(maxWalkSAT(no_vars, cnf, 120, 100, 0.75))
+    # print(maxWalkSAT(no_vars, cnf, 120, 100, 1))
+
+    # no_vars = 2
+    # cnf = [(1 ,2), (-1, -2), (1 ,-2), (-1 ,2)]
     # print(maxWalkSAT(no_vars, cnf, 120, 1000))
 
     # no_vars = 5
@@ -107,3 +117,5 @@ if __name__ == "__main__":
     # print(maxWalkSAT(no_vars, cnf, 120, 1000))
 
     solveCNFFiles()
+
+
