@@ -4,14 +4,24 @@
 #include <string>
 #include <sstream>
 #include <set>
+#include <chrono>
 using namespace std;
 
 string dir_path = "./tests_tsp/";
 int num_of_cities;
 vector<vector<double>> graph;   // using an adjacency matrix to represent the graph of cities
+vector<int> optimal_route;      // to record the path of the optimal route
 
 void initGraph(fstream& );
 void readInputFile();
+void printGraphInfo(vector<vector<double>> graph);
+void printOptimalRoute();
+void printElapsedTime(chrono::steady_clock::time_point start, chrono::steady_clock::time_point end);
+void dfs_with_bound(set<int>& visited, int cur_vertex, double cost, double& lower_bound, vector<int> current_route);
+double tsp_branch_and_bound();
+void dfs_without_bnb(set<int>& visited, int cur_vertex, double cost, double& lower_bound, vector<int> current_route);
+double tsp_without_bnb();
+
 
 void initGraph(fstream& input_file)
 {
@@ -56,41 +66,93 @@ void printGraphInfo(vector<vector<double>> graph)
     }
 }
 
-void dfs(vector<vector<double>> graph, set<int>& visited, int cur_vertex, double cost, double& lower_bound)
+void printOptimalRoute()
+{
+    for(int i:optimal_route)
+        cout << i << " ";
+    cout << "\n";
+}
+
+void printElapsedTime(chrono::steady_clock::time_point start, chrono::steady_clock::time_point end)
+{
+    cout << "\tElapsed time in milliseconds: "
+        << chrono::duration_cast<chrono::milliseconds>(end - start).count() 
+        << " ms\n";
+}
+
+void dfs_with_bound(set<int>& visited, int cur_vertex, double cost, double& lower_bound, vector<int> current_route)
 {
     visited.insert(cur_vertex);
-    cout << "cur_vertex: " << cur_vertex << endl;
     if(cost>=lower_bound)
         return;
 
     if(visited.size()==graph.size()) {
         cost += graph[cur_vertex][0];
-        // cout << "graph[cur_vertex][0]: " << graph[cur_vertex][0] << endl;
-        cout << "cost: " << cost << endl;
+        current_route.push_back(cur_vertex);
         if(cost<lower_bound) {
             lower_bound = cost;
-        } else {
-            return;
+            optimal_route = current_route;
         }
+        else
+            return;
     }
 
     for(int i=0; i<graph[cur_vertex].size(); i++) {
         if(visited.find(i)==visited.end()) {
             cost += graph[cur_vertex][i];
-            cout << "cost: " << cost << endl;
-            dfs(graph, visited, i, cost, lower_bound);
+            current_route.push_back(cur_vertex);
+            dfs_with_bound(visited, i, cost, lower_bound, current_route);
             visited.erase(i);
+            current_route.pop_back();
             cost -= graph[cur_vertex][i];
-            cout << "=\n";
         }
     }
 }
 
-double branch_and_bound(vector<vector<double>> graph)
+double tsp_branch_and_bound()
 {
     set<int> visited;
     double cost = 0, lower_bound = INT_MAX;
-    dfs(graph, visited, 0, cost, lower_bound);
+    vector<int> current_route;
+    dfs_with_bound(visited, 0, cost, lower_bound, current_route);
+    optimal_route.push_back(0);
+    return lower_bound;
+}
+
+void dfs_without_bnb(set<int>& visited, int cur_vertex, double cost, double& lower_bound, vector<int> current_route)
+{
+    visited.insert(cur_vertex);
+
+    if(visited.size()==graph.size()) {
+        cost += graph[cur_vertex][0];
+        current_route.push_back(cur_vertex);
+        if(cost<lower_bound) {
+            lower_bound = cost;
+            optimal_route = current_route;
+        }
+        else
+            return;
+    }
+
+    for(int i=0; i<graph[cur_vertex].size(); i++) {
+        if(visited.find(i)==visited.end()) {
+            cost += graph[cur_vertex][i];
+            current_route.push_back(cur_vertex);
+            dfs_without_bnb(visited, i, cost, lower_bound, current_route);
+            visited.erase(i);
+            current_route.pop_back();
+            cost -= graph[cur_vertex][i];
+        }
+    }
+}
+
+double tsp_without_bnb()
+{
+    set<int> visited;
+    double cost = 0, lower_bound = INT_MAX;
+    vector<int> current_route;
+    dfs_without_bnb(visited, 0, cost, lower_bound, current_route);
+    optimal_route.push_back(0);
     return lower_bound;
 }
 
@@ -106,9 +168,25 @@ int main()
 
     // step 1. compute the upper bound
 
-    // step 2. branch and bound algorithm
-    double minimum_path_cost = branch_and_bound(graph);
-    cout << "minimum_cost: " << minimum_path_cost << "\n";
+    // step 2-1. Normal DFS algorithm
+    cout << "\nNormal Depth-First Search:\n";
+    auto start = chrono::steady_clock::now();
+    double minimum_path_cost = tsp_without_bnb();
+    auto end = chrono::steady_clock::now();
+    cout << "\tthe minimum path cost: " << minimum_path_cost << "\n";
+    cout << "\tthe path of optimal route: ";
+    printOptimalRoute();
+    printElapsedTime(start, end);
+
+    // step 2-2. branch and bound algorithm
+    cout << "\nDepth-First Search Branch and Bound:\n";
+    start = chrono::steady_clock::now();
+    minimum_path_cost = tsp_branch_and_bound();
+    end = chrono::steady_clock::now();
+    cout << "\tthe minimum path cost: " << minimum_path_cost << "\n";
+    cout << "\tthe path of optimal route: ";
+    printOptimalRoute();
+    printElapsedTime(start, end);
 
     return 0;
 }
