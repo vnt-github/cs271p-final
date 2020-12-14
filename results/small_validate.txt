@@ -1,0 +1,150 @@
+vnt@vnt-rog:/mnt/c/cs271p-final$ python maxSAT.py 
+no_literals_clause: 2 no_clauses: 2 no_vars: 3
+('cnf', [(3, -1), (-3, 2)])
+(0, 0)
+best assignment: [False, False, False]
+number of satisfied clauses: 2
+time: 0.000096 seconds
+--------------------------------------------------
+no_literals_clause: 2 no_clauses: 5 no_vars: 5
+('cnf', [(5, -3), (2, 4), (4, -5), (1, -2), (2, 3)])
+(0, 0)
+best assignment: [True, True, True, True, True]
+number of satisfied clauses: 5
+time: 0.000113 seconds
+--------------------------------------------------
+no_literals_clause: 2 no_clauses: 2 no_vars: 3
+('cnf', [(3, -1), (-3, 2)])
+(0, 0)
+best assignment: [False, False, False]
+number of satisfied clauses: 2
+time: 0.000098 seconds
+--------------------------------------------------
+no_literals_clause: 2 no_clauses: 5 no_vars: 5
+('cnf', [(5, -3), (2, 4), (4, -5), (1, -2), (2, 3)])
+(0, 0)
+best assignment: [False, False, True, True, True]
+number of satisfied clauses: 5
+time: 0.000100 seconds
+--------------------------------------------------
+no_literals_clause: 2 no_clauses: 2 no_vars: 3
+('cnf', [(3, -1), (-3, 2)])
+(0, 0)
+best assignment: [False, False, False]
+number of satisfied clauses: 2
+time: 0.000087 seconds
+--------------------------------------------------
+no_literals_clause: 2 no_clauses: 5 no_vars: 5
+('cnf', [(5, -3), (2, 4), (4, -5), (1, -2), (2, 3)])
+(0, 0)
+best assignment: [True, True, True, True, True]
+number of satisfied clauses: 5
+time: 0.000058 seconds
+--------------------------------------------------
+no_literals_clause: 2 no_clauses: 2 no_vars: 3
+('cnf', [(3, -1), (-3, 2)])
+(0, 0)
+best assignment: [False, True, True]
+number of satisfied clauses: 2
+time: 0.000090 seconds
+--------------------------------------------------
+no_literals_clause: 2 no_clauses: 5 no_vars: 5
+('cnf', [(5, -3), (2, 4), (4, -5), (1, -2), (2, 3)])
+(0, 0)
+best assignment: [True, True, True, True, True]
+number of satisfied clauses: 5
+time: 0.000056 seconds
+--------------------------------------------------
+no_literals_clause: 2 no_clauses: 2 no_vars: 3
+('cnf', [(3, -1), (-3, 2)])
+(0, 0)
+best assignment: [False, False, False]
+number of satisfied clauses: 2
+time: 0.000082 seconds
+--------------------------------------------------
+no_literals_clause: 2 no_clauses: 5 no_vars: 5
+('cnf', [(5, -3), (2, 4), (4, -5), (1, -2), (2, 3)])
+(0, 0)
+best assignment: [False, False, True, True, True]
+number of satisfied clauses: 5
+time: 0.000074 seconds
+--------------------------------------------------
+no_literals_clause: 2 no_clauses: 2 no_vars: 3
+('cnf', [(3, -1), (-3, 2)])
+(0, 0)
+best assignment: [False, True, False]
+number of satisfied clauses: 2
+time: 0.000074 seconds
+--------------------------------------------------
+no_literals_clause: 2 no_clauses: 5 no_vars: 5
+('cnf', [(5, -3), (2, 4), (4, -5), (1, -2), (2, 3)])
+(0, 0)
+best assignment: [True, True, False, False, False]
+number of satisfied clauses: 5
+time: 0.000070 seconds
+--------------------------------------------------
+no_literals_clause: 2 no_clauses: 2 no_vars: 3
+('cnf', [(3, -1), (-3, 2)])
+(0, 0)
+best assignment: [False, False, False]
+number of satisfied clauses: 2
+time: 0.000047 seconds
+--------------------------------------------------
+no_literals_clause: 2 no_clauses: 5 no_vars: 5
+('cnf', [(5, -3), (2, 4), (4, -5), (1, -2), (2, 3)])
+(0, 0)
+best assignment: [True, True, False, True, True]
+number of satisfied clauses: 5
+time: 0.000090 seconds
+--------------------------------------------------
+no_literals_clause: 2 no_clauses: 2 no_vars: 3
+('cnf', [(3, -1), (-3, 2)])
+(0, 0)
+best assignment: [False, False, False]
+number of satisfied clauses: 2
+time: 0.000047 seconds
+--------------------------------------------------
+no_literals_clause: 2 no_clauses: 5 no_vars: 5
+('cnf', [(5, -3), (2, 4), (4, -5), (1, -2), (2, 3)])
+(0, 0)
+best assignment: [True, True, False, False, False]
+number of satisfied clauses: 5
+time: 0.000067 seconds
+--------------------------------------------------
+no_literals_clause: 2 no_clauses: 2 no_vars: 3
+('cnf', [(3, -1), (-3, 2)])
+(0, 0)
+best assignment: [False, True, True]
+number of satisfied clauses: 2
+time: 0.000066 seconds
+--------------------------------------------------
+no_literals_clause: 2 no_clauses: 5 no_vars: 5
+('cnf', [(5, -3), (2, 4), (4, -5), (1, -2), (2, 3)])
+(0, 0)
+best assignment: [True, True, True, True, True]
+number of satisfied clauses: 5
+time: 0.000079 seconds
+--------------------------------------------------
+no_literals_clause: 2 no_clauses: 2 no_vars: 3
+('cnf', [(3, -1), (-3, 2)])
+(0, 0)
+best assignment: [False, True, False]
+number of satisfied clauses: 2
+time: 0.000062 seconds
+--------------------------------------------------
+no_literals_clause: 2 no_clauses: 5 no_vars: 5
+('cnf', [(5, -3), (2, 4), (4, -5), (1, -2), (2, 3)])
+(0, 0)
+best assignment: [True, True, False, True, True]
+number of satisfied clauses: 5
+time: 0.000065 seconds
+--------------------------------------------------
+no_literals_clause: 2 no_clauses: 4 no_vars: 2
+('cnf', [(1, 2), (-1, -2), (1, -2), (-1, 2)])
+
+
+(0, 0, 638832)
+best assignment: [False, True]
+number of satisfied clauses: 3
+time: 10.000071 seconds
+--------------------------------------------------

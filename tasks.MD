@@ -88,3 +88,6 @@ professor will grade the project himself
     - [ ] if there is some improvement then i'd reset the max flips for the current iteration to try longer for better iteration.
 
 - [ ] test performance against full greedy algo
+
+- [ ] write docstring
+- [ ] write how to operate.. ie early terminate ctrl+c

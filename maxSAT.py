@@ -8,7 +8,7 @@ class MAXSatSolver():
     """
     a max sat solver
     """
-    def __init__(self, timeout_duration_sec, max_flips, noise):
+    def __init__(self, timeout_duration_sec, max_flips=1000, noise=0.25):
         self.cnf = []
         self.best_assignment = None
         self.no_vars = None
@@ -24,6 +24,8 @@ class MAXSatSolver():
         try:
             init = time()
             self.best_assignment = None
+            # NOTE: by our observation of all true and alternte true, false n clauses cnf we need at least n/2 max_flips for best performance for satisfiable clauses
+            self.max_flips = self.no_vars/2 + 1
             self.maxWalkSAT()
         except KeyboardInterrupt:
             print("\nearly terminating the best results are:")
@@ -140,6 +142,14 @@ class MAXSatSolver():
                     greedy += 1
                     var_id = self.getGreedyClauseVar(curr_assignment, clause)
 
+                # NOTE: this is the case to handle if the first random initial assignment has a more clauses satisfied before fliping
+                # observer in the 'cnf': [(1, 2, 3), (-2, -1, 3), (1, -3, 2), (1, 2, -3), (1, -2, -3), (2, -3, 1), (-3, 1, -2), (-2, 3, -1), (-3, -1, -2), (-1, -2, 3), (2, -3, 1), (-1, -2, 3), (2, -1, -3), (-3, 1, 2), (2, 3, -1), (1, 3, -2), (3, -2, 1), (2, 3, 1), (-1, -3, -2), (-2, 3, 1), (-2, 1, 3), (1, 2, 3), (-3, 2, 1), (-3, -2, 1), (-1, 3, -2), (2, 3, -1), (-2, -3, 1), (-2, -1, 3), (-2, 1, 3), (-2, -3, -1), (2, -3, 1), (-1, -3, 2), (-1, 2, 3), (-3, -1, 2), (-2, 1, -3), (-1, -2, 3), (-2, -3, -1), (3, -1, 2), (-2, 3, 1), (-2, 1, -3), (2, -3, -1), (3, -2, -1), (-1, -3, -2), (-1, 2, 3), (-2, 1, 3), (1, -3, -2), (2, 1, -3), (-3, -1, 2), (-3, -2, 1), (-3, -1, -2), (2, 1, -3), (1, 3, 2), (1, -2, 3), (-3, 2, -1), (1, -2, 3), (-1, 2, -3), (-2, -1, 3), (-3, 1, -2), (-2, 3, 1), (-1, -2, -3), (2, 3, 1), (-2, 1, -3), (-2, -1, -3), (2, 1, -3), (-2, -1, 3), (1, 2, -3), (-1, -2, 3), (-3, -2, -1), (-2, -1, -3), (2, 3, 1), (1, -3, -2), (-1, 2, 3), (-1, -3, 2), (-1, -3, 2), (3, 1, 2), (-2, -1, 3), (3, -1, -2), (-1, -3, -2), (-1, 3, -2), (2, -3, -1), (1, 3, 2), (3, -1, -2), (2, 3, 1), (2, 1, -3), (2, -1, 3), (3, 2, 1), (-1, -3, 2), (-3, 2, 1), (-1, -3, -2), (-2, 3, -1), (2, -1, -3), (3, -1, 2), (-3, 2, 1), (3, -2, -1), (-1, -3, -2), (2, -1, -3), (-3, 2, -1), (-3, 2, 1), (-1, 3, 2), (-3, -2, 1)]
+                # with [True, False, False] giving 91 satisfied clauses where [False, False, False] gives 90 satisfied clauses
+                if flip_i == 0 and self.objective_function(curr_assignment) < self.objective_function(self.best_assignment):
+                    print "%2.6f" % (time()-init), self.satisfiedCount(curr_assignment), retry_i, flip_i
+                    # print('retry_i: {} flip_i: {} prev_clauses_satisfied: {} new_clauses_satisfied: {}'.format(retry_i, flip_i, self.satisfiedCount(self.best_assignment), self.satisfiedCount(curr_assignment)))
+                    self.best_assignment = curr_assignment[:]
+
                 self.flip(curr_assignment, var_id)
                 if self.objective_function(curr_assignment) < self.objective_function(self.best_assignment):
                     print "%2.6f" % (time()-init), self.satisfiedCount(curr_assignment), retry_i, flip_i
@@ -149,32 +159,32 @@ class MAXSatSolver():
         return self.best_assignment
 
 if __name__ == "__main__":
-    for max_steps in range(1, 10, 1):
-        print('max_steps: {}'.format(max_steps))
-        s = MAXSatSolver(30, max_steps, 0.2)
-        s.solveCNFFiles()
-        
-
-    # no_vars = 3
-    # cnf = [(3, -1), (-3, 2)]
-    # s.solveCNF(no_vars, 2, 2, cnf)
+    # for max_steps in range(10, 150, 10):
+    #     print('max_steps: {}'.format(max_steps))
+    #     s = MAXSatSolver(30, max_steps, 0.2)
+    #     s.solveCNFFiles()
     
+    # no_vars = 100
+    # for max_steps in range(10, no_vars, 10):
+    #     print 'max_steps:', max_steps
+    #     s = MAXSatSolver(10, max_steps, 0.2)
+    #     # cnf = [[i, ] for i in range(1, no_vars+1)]
+    #     cnf = [[i, ] if i%2 else [-i,] for i in range(1, no_vars+1)]
+    #     s.solveCNF(no_vars, 1, no_vars, cnf)
+    
+    s = MAXSatSolver(10)
+    # for _ in range(10):
+    #     no_vars = 3
+    #     cnf = [(3, -1), (-3, 2)]
+    #     s.solveCNF(no_vars, 2, 2, cnf)
+
+    #     no_vars = 5
+    #     cnf = [(5 ,-3), (2, 4), (4 ,-5), (1 ,-2), (2, 3)]
+    #     s.solveCNF(no_vars, 2, 5, cnf)
+    s.solveCNFFiles()
+
     # # NOTE: use below to test the unsatisfied clause and early termination result
     # no_vars = 2
     # cnf = [(1 ,2), (-1, -2), (1 ,-2), (-1 ,2)]
     # s.solveCNF(no_vars, 2, 4, cnf)
-
-    # no_vars = 5
-    # cnf = [(5 ,-3), (2, 4), (4 ,-5), (1 ,-2), (2, 3)]
-    # s.solveCNF(no_vars, 2, 5, cnf)
-
-    # # NOTE: use below to test the performance
-    # no_vars = 1000
-    # cnf = [[i, ] if i%2 else [-i,] for i in range(1, no_vars+1)]
-    # s.solveCNF(no_vars, 1, no_vars, cnf)
-
-    # no_vars = 1000
-    # cnf = [[i, ] for i in range(1, no_vars+1)]
-    # s.solveCNF(no_vars, 1, no_vars, cnf)
-
 
