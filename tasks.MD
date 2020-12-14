@@ -82,3 +82,9 @@ professor will grade the project himself
 
 
 
+---
+- [ ] i'd improve by setting dynamic max_flips ... rather than having a constant max flips .. i'll have it set to len(cnf)/some_value
+    - [ ] need to find some value
+    - [ ] if there is some improvement then i'd reset the max flips for the current iteration to try longer for better iteration.
+
+- [ ] test performance against full greedy algo

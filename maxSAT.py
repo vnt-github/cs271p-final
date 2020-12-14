@@ -57,6 +57,7 @@ class MAXSatSolver():
                     self.cnf.append(tuple(map(int, each.split())))
                 print('no_literals_clause: {} no_clauses: {} no_vars: {}'.format(self.no_literals_clause, self.no_clauses, self.no_vars))
                 print('cnf', self.cnf)
+                print('time| clauses_satisfied| retry_i| flip_i|')
                 self._solve()
 
 
@@ -108,19 +109,21 @@ class MAXSatSolver():
         return best_var
 
     def maxWalkSAT(self):
+        init = time()
         timeout = time() + self.timeout_duration_sec
+        retry_i = 1
         greedy, randoms = 0, 0
         while time() < timeout:
             curr_assignment = self.randomInitialTruthAssignment()
-            # print('inital assignment', curr_assignment)
+            retry_i += 1
     
             if not self.best_assignment:
-                self.best_assignment = curr_assignment
+                self.best_assignment = curr_assignment[:]
             
-            for _ in range(self.max_flips):
+            for flip_i in range(self.max_flips):
                 if self.objective_function(curr_assignment) == 0:
                     self.objective_function(curr_assignment)
-                    self.best_assignment = curr_assignment
+                    self.best_assignment = curr_assignment[:]
                     print(greedy, randoms)
                     return self.best_assignment
             
@@ -139,12 +142,18 @@ class MAXSatSolver():
 
                 self.flip(curr_assignment, var_id)
                 if self.objective_function(curr_assignment) < self.objective_function(self.best_assignment):
-                    self.best_assignment = curr_assignment
-        print(greedy, randoms)
+                    print "%2.6f" % (time()-init), self.satisfiedCount(curr_assignment), retry_i, flip_i
+                    # print('retry_i: {} flip_i: {} prev_clauses_satisfied: {} new_clauses_satisfied: {}'.format(retry_i, flip_i, self.satisfiedCount(self.best_assignment), self.satisfiedCount(curr_assignment)))
+                    self.best_assignment = curr_assignment[:]
+        print(greedy, randoms, retry_i)
         return self.best_assignment
 
 if __name__ == "__main__":
-    s = MAXSatSolver(120, 1000, 0.25)
+    for max_steps in range(1, 10, 1):
+        print('max_steps: {}'.format(max_steps))
+        s = MAXSatSolver(30, max_steps, 0.2)
+        s.solveCNFFiles()
+        
 
     # no_vars = 3
     # cnf = [(3, -1), (-3, 2)]
@@ -167,6 +176,5 @@ if __name__ == "__main__":
     # no_vars = 1000
     # cnf = [[i, ] for i in range(1, no_vars+1)]
     # s.solveCNF(no_vars, 1, no_vars, cnf)
-    s.solveCNFFiles()
 
 

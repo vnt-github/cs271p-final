@@ -1,0 +1,984 @@
+vnt@vnt-rog:/mnt/c/cs271p-final$ python maxSAT.py
+max_steps: 10
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.007095 seconds retry_i: 2 flip_i: 6 clauses_satisfied: 453
+
+time: 0.113924 seconds retry_i: 16 flip_i: 9 clauses_satisfied: 460
+
+time: 0.123876 seconds retry_i: 17 flip_i: 8 clauses_satisfied: 463
+
+time: 1.329148 seconds retry_i: 174 flip_i: 7 clauses_satisfied: 468
+
+time: 2.324816 seconds retry_i: 304 flip_i: 9 clauses_satisfied: 476
+(1309, 311, 2605)
+best assignment: [True, True, True, True, False, False, False, False, True, False, False, False, True, False, False, False, True, True, True, False, False, False, False, False, True, False, True, True, True, False, True, False, False, False, True, False, True, True, False, True, True, True, True, True, False, True, False, True, False, False]
+number of satisfied clauses: 476
+time: 20.002057 seconds
+--------------------------------------------------
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.016224 seconds retry_i: 4 flip_i: 1 clauses_satisfied: 455
+
+time: 0.032895 seconds retry_i: 5 flip_i: 9 clauses_satisfied: 463
+
+time: 0.084576 seconds retry_i: 11 flip_i: 9 clauses_satisfied: 469
+
+time: 9.265357 seconds retry_i: 1208 flip_i: 7 clauses_satisfied: 471
+
+time: 12.998835 seconds retry_i: 1697 flip_i: 8 clauses_satisfied: 472
+(1267, 328, 2605)
+best assignment: [False, False, True, False, False, True, False, False, False, False, True, False, False, False, False, True, True, True, True, False, True, False, True, True, True, False, True, True, False, True, True, True, True, True, False, True, True, False, True, False, False, False, True, False, True, True, True, True, True, False]
+number of satisfied clauses: 472
+time: 20.005154 seconds
+--------------------------------------------------
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.006752 seconds retry_i: 2 flip_i: 8 clauses_satisfied: 444
+
+time: 0.030641 seconds retry_i: 5 flip_i: 9 clauses_satisfied: 453
+
+time: 0.093056 seconds retry_i: 14 flip_i: 8 clauses_satisfied: 455
+
+time: 0.405516 seconds retry_i: 54 flip_i: 8 clauses_satisfied: 458
+
+time: 0.722314 seconds retry_i: 95 flip_i: 6 clauses_satisfied: 462
+
+time: 0.805746 seconds retry_i: 105 flip_i: 8 clauses_satisfied: 463
+
+time: 1.013657 seconds retry_i: 131 flip_i: 8 clauses_satisfied: 465
+
+time: 1.531915 seconds retry_i: 199 flip_i: 9 clauses_satisfied: 467
+
+time: 1.734176 seconds retry_i: 225 flip_i: 8 clauses_satisfied: 468
+
+time: 15.078352 seconds retry_i: 1952 flip_i: 9 clauses_satisfied: 469
+(1309, 340, 2594)
+best assignment: [False, False, False, True, False, True, False, False, True, True, False, False, True, False, True, False, False, False, True, False, False, False, False, True, True, True, False, True, False, False, True, False, True, True, False, True, False, False, True, False, False, False, True, False, True, True, False, True, True, False]
+number of satisfied clauses: 469
+time: 20.004762 seconds
+--------------------------------------------------
+max_steps: 20
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.016875 seconds retry_i: 3 flip_i: 4 clauses_satisfied: 459
+
+time: 0.023891 seconds retry_i: 3 flip_i: 11 clauses_satisfied: 467
+
+time: 0.028447 seconds retry_i: 3 flip_i: 15 clauses_satisfied: 468
+
+time: 0.045324 seconds retry_i: 4 flip_i: 13 clauses_satisfied: 469
+
+time: 0.050061 seconds retry_i: 4 flip_i: 19 clauses_satisfied: 472
+
+time: 0.222592 seconds retry_i: 14 flip_i: 17 clauses_satisfied: 477
+
+time: 13.884511 seconds retry_i: 823 flip_i: 19 clauses_satisfied: 478
+(2054, 515, 1183)
+best assignment: [True, True, True, False, False, False, False, True, False, False, False, True, True, True, True, False, False, False, False, True, False, False, False, False, False, True, True, False, True, False, True, False, False, True, True, True, True, True, False, True, False, True, True, True, False, True, True, False, False, False]
+number of satisfied clauses: 478
+time: 20.010919 seconds
+--------------------------------------------------
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.013494 seconds retry_i: 2 flip_i: 14 clauses_satisfied: 477
+
+time: 0.016688 seconds retry_i: 2 flip_i: 16 clauses_satisfied: 480
+
+time: 4.003481 seconds retry_i: 236 flip_i: 17 clauses_satisfied: 481
+(2026, 523, 1182)
+best assignment: [False, True, True, False, True, False, False, False, False, False, True, False, False, False, False, True, True, False, False, True, False, False, True, True, True, True, True, True, False, True, True, True, False, True, False, True, True, False, True, True, True, False, True, True, True, True, False, True, True, False]
+number of satisfied clauses: 481
+time: 20.006587 seconds
+--------------------------------------------------
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.003363 seconds retry_i: 2 flip_i: 1 clauses_satisfied: 436
+
+time: 0.028291 seconds retry_i: 3 flip_i: 11 clauses_satisfied: 456
+
+time: 0.036340 seconds retry_i: 3 flip_i: 19 clauses_satisfied: 460
+
+time: 0.081848 seconds retry_i: 6 flip_i: 16 clauses_satisfied: 462
+
+time: 0.112069 seconds retry_i: 8 flip_i: 16 clauses_satisfied: 465
+
+time: 0.160116 seconds retry_i: 11 flip_i: 10 clauses_satisfied: 469
+
+time: 0.168407 seconds retry_i: 11 flip_i: 16 clauses_satisfied: 470
+
+time: 0.211783 seconds retry_i: 14 flip_i: 9 clauses_satisfied: 473
+
+time: 0.604143 seconds retry_i: 35 flip_i: 17 clauses_satisfied: 477
+(2159, 545, 1173)
+best assignment: [False, False, False, True, False, False, True, False, False, True, True, False, False, False, False, False, False, False, True, False, False, False, False, False, False, True, False, True, False, False, True, True, True, True, True, False, False, True, True, False, True, True, True, True, True, False, False, True, True, False]
+number of satisfied clauses: 477
+time: 20.002229 seconds
+--------------------------------------------------
+max_steps: 30
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.002926 seconds retry_i: 2 flip_i: 1 clauses_satisfied: 442
+
+time: 0.015459 seconds retry_i: 2 flip_i: 15 clauses_satisfied: 462
+
+time: 0.030460 seconds retry_i: 2 flip_i: 27 clauses_satisfied: 467
+
+time: 0.164372 seconds retry_i: 7 flip_i: 26 clauses_satisfied: 480
+(2579, 632, 732)
+best assignment: [True, True, True, False, False, False, False, True, True, False, False, False, True, True, True, False, True, True, True, True, False, False, True, False, True, False, False, True, True, False, True, False, True, True, True, False, False, True, False, False, True, False, True, True, False, False, True, True, True, False]
+number of satisfied clauses: 480
+time: 20.010248 seconds
+--------------------------------------------------
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.016964 seconds retry_i: 2 flip_i: 18 clauses_satisfied: 458
+
+time: 0.020508 seconds retry_i: 2 flip_i: 20 clauses_satisfied: 460
+
+time: 0.028917 seconds retry_i: 2 flip_i: 28 clauses_satisfied: 462
+
+time: 0.045764 seconds retry_i: 3 flip_i: 18 clauses_satisfied: 466
+
+time: 0.050730 seconds retry_i: 3 flip_i: 22 clauses_satisfied: 467
+
+time: 0.058581 seconds retry_i: 3 flip_i: 29 clauses_satisfied: 470
+
+time: 0.159949 seconds retry_i: 7 flip_i: 23 clauses_satisfied: 472
+
+time: 0.190388 seconds retry_i: 8 flip_i: 25 clauses_satisfied: 473
+
+time: 0.194777 seconds retry_i: 8 flip_i: 28 clauses_satisfied: 477
+
+time: 3.323131 seconds retry_i: 122 flip_i: 25 clauses_satisfied: 478
+
+time: 4.546143 seconds retry_i: 167 flip_i: 17 clauses_satisfied: 479
+
+time: 4.549297 seconds retry_i: 167 flip_i: 20 clauses_satisfied: 480
+(2573, 637, 732)
+best assignment: [False, False, True, False, False, True, False, False, True, False, True, False, False, False, False, True, False, True, False, False, True, False, True, False, True, True, True, True, False, True, True, False, False, True, True, True, True, False, True, False, True, False, False, False, True, False, False, True, True, False]
+number of satisfied clauses: 480
+time: 20.000476 seconds
+--------------------------------------------------
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.006369 seconds retry_i: 2 flip_i: 5 clauses_satisfied: 438
+
+time: 0.013525 seconds retry_i: 2 flip_i: 13 clauses_satisfied: 451
+
+time: 0.021017 seconds retry_i: 2 flip_i: 23 clauses_satisfied: 460
+
+time: 0.027874 seconds retry_i: 2 flip_i: 29 clauses_satisfied: 463
+
+time: 0.050846 seconds retry_i: 3 flip_i: 22 clauses_satisfied: 464
+
+time: 0.053281 seconds retry_i: 3 flip_i: 24 clauses_satisfied: 465
+
+time: 0.074437 seconds retry_i: 4 flip_i: 18 clauses_satisfied: 469
+
+time: 0.079959 seconds retry_i: 4 flip_i: 22 clauses_satisfied: 472
+
+time: 0.303992 seconds retry_i: 12 flip_i: 26 clauses_satisfied: 474
+
+time: 0.910715 seconds retry_i: 34 flip_i: 22 clauses_satisfied: 475
+
+time: 0.914457 seconds retry_i: 34 flip_i: 26 clauses_satisfied: 479
+(2689, 689, 720)
+best assignment: [True, False, False, True, False, True, True, True, True, True, False, False, True, True, False, False, False, False, True, True, False, False, False, True, True, True, False, True, False, False, False, True, False, True, True, False, False, False, False, False, False, True, False, False, False, False, False, True, True, False]
+number of satisfied clauses: 479
+time: 20.009113 seconds
+--------------------------------------------------
+max_steps: 40
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.007230 seconds retry_i: 2 flip_i: 6 clauses_satisfied: 453
+
+time: 0.013852 seconds retry_i: 2 flip_i: 13 clauses_satisfied: 466
+
+time: 0.025844 seconds retry_i: 2 flip_i: 20 clauses_satisfied: 467
+
+time: 0.030857 seconds retry_i: 2 flip_i: 24 clauses_satisfied: 469
+
+time: 0.036102 seconds retry_i: 2 flip_i: 30 clauses_satisfied: 470
+
+time: 0.042677 seconds retry_i: 2 flip_i: 36 clauses_satisfied: 473
+
+time: 0.279645 seconds retry_i: 8 flip_i: 35 clauses_satisfied: 475
+
+time: 0.617513 seconds retry_i: 17 flip_i: 33 clauses_satisfied: 478
+
+time: 1.259640 seconds retry_i: 34 flip_i: 21 clauses_satisfied: 479
+
+time: 2.025371 seconds retry_i: 54 flip_i: 22 clauses_satisfied: 483
+(3003, 660, 519)
+best assignment: [True, False, True, True, False, False, False, True, True, False, False, True, True, True, True, True, False, True, True, True, False, True, True, False, True, False, True, True, True, False, True, False, False, True, True, True, True, True, False, False, True, False, True, True, False, True, True, False, False, False]
+number of satisfied clauses: 483
+time: 20.031764 seconds
+--------------------------------------------------
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.009205 seconds retry_i: 2 flip_i: 10 clauses_satisfied: 459
+
+time: 0.015753 seconds retry_i: 2 flip_i: 16 clauses_satisfied: 462
+
+time: 0.021751 seconds retry_i: 2 flip_i: 22 clauses_satisfied: 467
+
+time: 0.033383 seconds retry_i: 2 flip_i: 31 clauses_satisfied: 471
+
+time: 0.260767 seconds retry_i: 8 flip_i: 28 clauses_satisfied: 472
+
+time: 0.267545 seconds retry_i: 8 flip_i: 35 clauses_satisfied: 478
+
+time: 1.627053 seconds retry_i: 43 flip_i: 28 clauses_satisfied: 479
+
+time: 1.631540 seconds retry_i: 43 flip_i: 31 clauses_satisfied: 483
+(2898, 738, 515)
+best assignment: [False, False, True, False, True, False, False, True, True, True, True, True, False, False, False, False, True, True, False, False, False, False, True, False, True, True, True, True, False, True, True, True, False, True, False, True, True, False, True, False, True, False, False, True, True, True, False, True, True, False]
+number of satisfied clauses: 483
+time: 20.024046 seconds
+--------------------------------------------------
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.014135 seconds retry_i: 2 flip_i: 16 clauses_satisfied: 462
+
+time: 0.059779 seconds retry_i: 3 flip_i: 26 clauses_satisfied: 463
+
+time: 0.068901 seconds retry_i: 3 flip_i: 34 clauses_satisfied: 469
+
+time: 0.145746 seconds retry_i: 5 flip_i: 38 clauses_satisfied: 472
+
+time: 0.189257 seconds retry_i: 6 flip_i: 35 clauses_satisfied: 476
+
+time: 0.649139 seconds retry_i: 18 flip_i: 24 clauses_satisfied: 477
+
+time: 4.193169 seconds retry_i: 108 flip_i: 38 clauses_satisfied: 479
+(3045, 749, 512)
+best assignment: [False, True, False, True, False, True, True, True, True, True, False, False, True, True, True, True, True, True, False, False, True, False, True, True, True, False, False, False, False, False, True, False, False, True, False, True, False, True, False, False, False, False, True, True, False, False, False, True, True, False]
+number of satisfied clauses: 479
+time: 20.013461 seconds
+--------------------------------------------------
+max_steps: 50
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.009245 seconds retry_i: 2 flip_i: 11 clauses_satisfied: 458
+
+time: 0.016894 seconds retry_i: 2 flip_i: 19 clauses_satisfied: 467
+
+time: 0.048528 seconds retry_i: 2 flip_i: 48 clauses_satisfied: 472
+
+time: 0.074958 seconds retry_i: 3 flip_i: 28 clauses_satisfied: 473
+
+time: 0.086481 seconds retry_i: 3 flip_i: 39 clauses_satisfied: 477
+
+time: 0.091864 seconds retry_i: 3 flip_i: 46 clauses_satisfied: 481
+
+time: 0.338463 seconds retry_i: 8 flip_i: 48 clauses_satisfied: 482
+
+time: 8.432384 seconds retry_i: 171 flip_i: 43 clauses_satisfied: 483
+(3251, 775, 403)
+best assignment: [True, False, True, True, False, False, False, True, True, False, False, True, True, True, True, True, True, True, True, True, False, True, False, False, True, False, True, True, True, False, True, False, False, True, True, True, True, True, False, False, True, False, True, True, False, True, True, False, True, False]
+number of satisfied clauses: 483
+time: 20.006050 seconds
+--------------------------------------------------
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.007215 seconds retry_i: 2 flip_i: 6 clauses_satisfied: 459
+
+time: 0.013385 seconds retry_i: 2 flip_i: 13 clauses_satisfied: 467
+
+time: 0.020877 seconds retry_i: 2 flip_i: 19 clauses_satisfied: 470
+
+time: 0.030649 seconds retry_i: 2 flip_i: 28 clauses_satisfied: 473
+
+time: 0.090107 seconds retry_i: 3 flip_i: 35 clauses_satisfied: 478
+
+time: 0.094097 seconds retry_i: 3 flip_i: 38 clauses_satisfied: 480
+
+time: 0.508563 seconds retry_i: 11 flip_i: 44 clauses_satisfied: 481
+
+time: 1.447808 seconds retry_i: 30 flip_i: 36 clauses_satisfied: 483
+
+time: 2.680618 seconds retry_i: 55 flip_i: 38 clauses_satisfied: 484
+
+time: 14.957678 seconds retry_i: 303 flip_i: 46 clauses_satisfied: 485
+(3211, 837, 404)
+best assignment: [False, False, True, False, True, False, False, True, True, True, True, False, False, False, False, True, True, True, True, False, True, False, True, True, True, True, True, True, False, True, True, True, False, True, False, True, True, False, True, False, True, False, False, True, True, True, False, True, True, False]
+number of satisfied clauses: 485
+time: 20.003896 seconds
+--------------------------------------------------
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.007679 seconds retry_i: 2 flip_i: 10 clauses_satisfied: 455
+
+time: 0.013987 seconds retry_i: 2 flip_i: 16 clauses_satisfied: 460
+
+time: 0.023865 seconds retry_i: 2 flip_i: 28 clauses_satisfied: 476
+
+time: 0.031580 seconds retry_i: 2 flip_i: 34 clauses_satisfied: 478
+
+time: 3.346537 seconds retry_i: 67 flip_i: 37 clauses_satisfied: 479
+
+time: 4.475153 seconds retry_i: 88 flip_i: 47 clauses_satisfied: 480
+
+time: 5.101577 seconds retry_i: 101 flip_i: 38 clauses_satisfied: 481
+(3088, 802, 374)
+best assignment: [True, True, True, False, False, True, True, True, False, False, False, False, True, False, False, True, True, False, True, False, True, True, True, True, True, False, False, True, False, False, True, True, False, True, True, True, False, False, True, False, True, True, False, False, True, True, True, False, True, False]
+number of satisfied clauses: 481
+time: 20.055571 seconds
+--------------------------------------------------
+max_steps: 60
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.006919 seconds retry_i: 2 flip_i: 6 clauses_satisfied: 450
+
+time: 0.021552 seconds retry_i: 2 flip_i: 18 clauses_satisfied: 457
+
+time: 0.037909 seconds retry_i: 2 flip_i: 33 clauses_satisfied: 465
+
+time: 0.055989 seconds retry_i: 2 flip_i: 50 clauses_satisfied: 474
+
+time: 0.063864 seconds retry_i: 2 flip_i: 57 clauses_satisfied: 477
+
+time: 0.234656 seconds retry_i: 5 flip_i: 38 clauses_satisfied: 478
+
+time: 0.239095 seconds retry_i: 5 flip_i: 43 clauses_satisfied: 479
+
+time: 0.242575 seconds retry_i: 5 flip_i: 46 clauses_satisfied: 481
+
+time: 2.763180 seconds retry_i: 40 flip_i: 52 clauses_satisfied: 482
+
+time: 6.114160 seconds retry_i: 91 flip_i: 49 clauses_satisfied: 483
+
+time: 7.269781 seconds retry_i: 108 flip_i: 55 clauses_satisfied: 484
+(3231, 767, 303)
+best assignment: [True, False, True, True, False, False, False, True, True, False, False, True, True, True, True, True, False, True, True, True, False, False, False, False, True, False, True, True, True, False, True, False, False, True, True, True, True, True, False, False, True, False, True, True, False, True, True, False, True, False]
+number of satisfied clauses: 484
+time: 20.017925 seconds
+--------------------------------------------------
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.015092 seconds retry_i: 2 flip_i: 18 clauses_satisfied: 460
+
+time: 0.020288 seconds retry_i: 2 flip_i: 24 clauses_satisfied: 463
+
+time: 0.038317 seconds retry_i: 2 flip_i: 39 clauses_satisfied: 467
+
+time: 0.050114 seconds retry_i: 2 flip_i: 50 clauses_satisfied: 468
+
+time: 0.057665 seconds retry_i: 2 flip_i: 56 clauses_satisfied: 472
+
+time: 0.149239 seconds retry_i: 4 flip_i: 33 clauses_satisfied: 473
+
+time: 0.156350 seconds retry_i: 4 flip_i: 38 clauses_satisfied: 474
+
+time: 0.617207 seconds retry_i: 11 flip_i: 48 clauses_satisfied: 476
+
+time: 0.650420 seconds retry_i: 12 flip_i: 19 clauses_satisfied: 477
+
+time: 0.654962 seconds retry_i: 12 flip_i: 23 clauses_satisfied: 479
+
+time: 0.678892 seconds retry_i: 12 flip_i: 43 clauses_satisfied: 481
+
+time: 1.862168 seconds retry_i: 31 flip_i: 57 clauses_satisfied: 482
+
+time: 2.221642 seconds retry_i: 37 flip_i: 45 clauses_satisfied: 484
+
+time: 5.913426 seconds retry_i: 95 flip_i: 25 clauses_satisfied: 485
+(3438, 798, 319)
+best assignment: [False, True, True, False, True, False, False, False, True, False, True, False, False, False, False, True, True, True, False, False, True, False, True, False, True, True, True, True, False, True, True, True, False, True, False, True, True, False, True, False, True, False, False, False, True, True, True, True, True, False]
+number of satisfied clauses: 485
+time: 20.051813 seconds
+--------------------------------------------------
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.008646 seconds retry_i: 2 flip_i: 8 clauses_satisfied: 460
+
+time: 0.014294 seconds retry_i: 2 flip_i: 13 clauses_satisfied: 462
+
+time: 0.032907 seconds retry_i: 2 flip_i: 30 clauses_satisfied: 464
+
+time: 0.042536 seconds retry_i: 2 flip_i: 39 clauses_satisfied: 465
+
+time: 0.051704 seconds retry_i: 2 flip_i: 46 clauses_satisfied: 470
+
+time: 0.057314 seconds retry_i: 2 flip_i: 51 clauses_satisfied: 471
+
+time: 0.066473 seconds retry_i: 2 flip_i: 59 clauses_satisfied: 475
+
+time: 0.369794 seconds retry_i: 7 flip_i: 59 clauses_satisfied: 476
+
+time: 0.849724 seconds retry_i: 15 flip_i: 52 clauses_satisfied: 477
+
+time: 1.017753 seconds retry_i: 18 flip_i: 26 clauses_satisfied: 479
+
+time: 1.035603 seconds retry_i: 18 flip_i: 39 clauses_satisfied: 481
+(3497, 850, 318)
+best assignment: [True, True, True, False, False, False, True, True, False, False, False, False, True, False, False, True, True, False, True, False, True, False, True, True, True, False, False, True, False, False, True, True, False, True, True, True, False, False, True, False, True, True, False, False, True, True, True, False, True, False]
+number of satisfied clauses: 481
+time: 20.047717 seconds
+--------------------------------------------------
+max_steps: 70
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.010642 seconds retry_i: 2 flip_i: 9 clauses_satisfied: 446
+
+time: 0.017104 seconds retry_i: 2 flip_i: 17 clauses_satisfied: 463
+
+time: 0.029096 seconds retry_i: 2 flip_i: 27 clauses_satisfied: 466
+
+time: 0.033469 seconds retry_i: 2 flip_i: 31 clauses_satisfied: 469
+
+time: 0.038973 seconds retry_i: 2 flip_i: 35 clauses_satisfied: 470
+
+time: 0.042480 seconds retry_i: 2 flip_i: 38 clauses_satisfied: 471
+
+time: 0.056921 seconds retry_i: 2 flip_i: 50 clauses_satisfied: 474
+
+time: 0.065034 seconds retry_i: 2 flip_i: 58 clauses_satisfied: 476
+
+time: 0.073139 seconds retry_i: 2 flip_i: 64 clauses_satisfied: 479
+
+time: 0.293354 seconds retry_i: 5 flip_i: 68 clauses_satisfied: 481
+
+time: 1.608942 seconds retry_i: 23 flip_i: 28 clauses_satisfied: 483
+
+time: 7.535283 seconds retry_i: 102 flip_i: 68 clauses_satisfied: 484
+(3482, 867, 268)
+best assignment: [True, True, True, True, False, False, False, True, True, False, False, True, True, True, True, True, False, True, True, True, False, True, False, False, True, False, True, True, True, False, True, False, False, True, True, True, True, True, False, False, True, False, True, True, False, True, True, False, True, False]
+number of satisfied clauses: 484
+time: 20.006882 seconds
+--------------------------------------------------
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.005690 seconds retry_i: 2 flip_i: 5 clauses_satisfied: 459
+
+time: 0.014751 seconds retry_i: 2 flip_i: 16 clauses_satisfied: 466
+
+time: 0.025558 seconds retry_i: 2 flip_i: 27 clauses_satisfied: 470
+
+time: 0.036043 seconds retry_i: 2 flip_i: 38 clauses_satisfied: 472
+
+time: 0.040397 seconds retry_i: 2 flip_i: 42 clauses_satisfied: 474
+
+time: 0.113137 seconds retry_i: 3 flip_i: 42 clauses_satisfied: 477
+
+time: 0.212391 seconds retry_i: 4 flip_i: 57 clauses_satisfied: 478
+
+time: 0.352454 seconds retry_i: 6 flip_i: 45 clauses_satisfied: 481
+
+time: 0.364599 seconds retry_i: 6 flip_i: 55 clauses_satisfied: 482
+
+time: 0.513842 seconds retry_i: 8 flip_i: 49 clauses_satisfied: 483
+
+time: 5.252245 seconds retry_i: 72 flip_i: 60 clauses_satisfied: 485
+(3505, 861, 270)
+best assignment: [False, False, True, False, True, False, False, False, True, False, True, False, False, False, False, True, True, True, False, False, True, False, True, True, True, True, True, True, False, True, True, True, False, True, False, True, True, False, True, False, True, False, False, True, True, True, False, True, True, False]
+number of satisfied clauses: 485
+time: 20.057188 seconds
+--------------------------------------------------
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.002646 seconds retry_i: 2 flip_i: 2 clauses_satisfied: 446
+
+time: 0.017592 seconds retry_i: 2 flip_i: 18 clauses_satisfied: 467
+
+time: 0.064883 seconds retry_i: 2 flip_i: 57 clauses_satisfied: 469
+
+time: 0.069556 seconds retry_i: 2 flip_i: 61 clauses_satisfied: 470
+
+time: 0.076203 seconds retry_i: 2 flip_i: 67 clauses_satisfied: 474
+
+time: 0.142214 seconds retry_i: 3 flip_i: 58 clauses_satisfied: 477
+
+time: 0.678574 seconds retry_i: 10 flip_i: 56 clauses_satisfied: 478
+
+time: 1.439379 seconds retry_i: 20 flip_i: 65 clauses_satisfied: 479
+
+time: 2.390605 seconds retry_i: 33 flip_i: 51 clauses_satisfied: 480
+
+time: 15.901108 seconds retry_i: 214 flip_i: 54 clauses_satisfied: 481
+(3570, 885, 270)
+best assignment: [True, False, False, True, False, False, True, True, False, False, False, False, True, False, False, True, True, True, True, True, True, False, True, True, True, False, False, False, False, True, True, True, False, True, False, True, False, True, False, True, False, True, False, True, False, False, False, False, True, False]
+number of satisfied clauses: 481
+time: 20.067589 seconds
+--------------------------------------------------
+max_steps: 80
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.005683 seconds retry_i: 2 flip_i: 6 clauses_satisfied: 454
+
+time: 0.010905 seconds retry_i: 2 flip_i: 11 clauses_satisfied: 459
+
+time: 0.014466 seconds retry_i: 2 flip_i: 14 clauses_satisfied: 463
+
+time: 0.019345 seconds retry_i: 2 flip_i: 20 clauses_satisfied: 466
+
+time: 0.039854 seconds retry_i: 2 flip_i: 41 clauses_satisfied: 476
+
+time: 0.046832 seconds retry_i: 2 flip_i: 47 clauses_satisfied: 479
+
+time: 0.077863 seconds retry_i: 2 flip_i: 75 clauses_satisfied: 480
+
+time: 0.489047 seconds retry_i: 7 flip_i: 57 clauses_satisfied: 481
+
+time: 0.653541 seconds retry_i: 9 flip_i: 49 clauses_satisfied: 482
+
+time: 0.672898 seconds retry_i: 9 flip_i: 67 clauses_satisfied: 484
+(3553, 936, 236)
+best assignment: [True, False, True, True, False, False, False, True, True, False, False, True, True, True, True, True, False, True, False, True, False, False, False, False, True, False, True, True, True, False, True, False, False, True, True, True, True, True, False, False, True, False, True, True, False, True, True, False, True, False]
+number of satisfied clauses: 484
+time: 20.048951 seconds
+--------------------------------------------------
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.007200 seconds retry_i: 2 flip_i: 9 clauses_satisfied: 455
+
+time: 0.013202 seconds retry_i: 2 flip_i: 15 clauses_satisfied: 463
+
+time: 0.023474 seconds retry_i: 2 flip_i: 26 clauses_satisfied: 465
+
+time: 0.071382 seconds retry_i: 2 flip_i: 66 clauses_satisfied: 466
+
+time: 0.076123 seconds retry_i: 2 flip_i: 71 clauses_satisfied: 472
+
+time: 0.081614 seconds retry_i: 2 flip_i: 76 clauses_satisfied: 473
+
+time: 0.149501 seconds retry_i: 3 flip_i: 60 clauses_satisfied: 474
+
+time: 0.165935 seconds retry_i: 3 flip_i: 75 clauses_satisfied: 475
+
+time: 0.233402 seconds retry_i: 4 flip_i: 61 clauses_satisfied: 476
+
+time: 0.252279 seconds retry_i: 4 flip_i: 77 clauses_satisfied: 477
+
+time: 0.377278 seconds retry_i: 6 flip_i: 42 clauses_satisfied: 478
+
+time: 0.380812 seconds retry_i: 6 flip_i: 45 clauses_satisfied: 479
+
+time: 0.389577 seconds retry_i: 6 flip_i: 52 clauses_satisfied: 482
+
+time: 0.406413 seconds retry_i: 6 flip_i: 67 clauses_satisfied: 483
+
+time: 0.749178 seconds retry_i: 10 flip_i: 77 clauses_satisfied: 485
+(3564, 963, 236)
+best assignment: [False, False, True, False, True, False, False, True, True, True, True, False, False, False, False, True, True, True, True, False, True, False, True, False, True, True, True, True, False, True, True, True, False, True, False, True, True, False, True, False, True, False, False, True, True, True, True, True, True, False]
+number of satisfied clauses: 485
+time: 20.059986 seconds
+--------------------------------------------------
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.019335 seconds retry_i: 2 flip_i: 23 clauses_satisfied: 463
+
+time: 0.026582 seconds retry_i: 2 flip_i: 31 clauses_satisfied: 467
+
+time: 0.066452 seconds retry_i: 2 flip_i: 73 clauses_satisfied: 469
+
+time: 0.153447 seconds retry_i: 3 flip_i: 78 clauses_satisfied: 472
+
+time: 0.178948 seconds retry_i: 4 flip_i: 24 clauses_satisfied: 473
+
+time: 0.303958 seconds retry_i: 5 flip_i: 63 clauses_satisfied: 474
+
+time: 0.325424 seconds retry_i: 5 flip_i: 79 clauses_satisfied: 476
+
+time: 0.473057 seconds retry_i: 7 flip_i: 63 clauses_satisfied: 477
+
+time: 0.476277 seconds retry_i: 7 flip_i: 65 clauses_satisfied: 479
+
+time: 3.088049 seconds retry_i: 38 flip_i: 45 clauses_satisfied: 481
+(3648, 967, 233)
+best assignment: [True, True, True, False, False, False, True, True, False, False, False, False, True, False, False, True, True, False, True, False, True, False, True, True, True, False, False, True, False, False, False, True, False, True, True, True, False, True, True, False, True, True, False, False, True, False, True, False, True, False]
+number of satisfied clauses: 481
+time: 20.006994 seconds
+--------------------------------------------------
+max_steps: 90
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.008744 seconds retry_i: 2 flip_i: 11 clauses_satisfied: 461
+
+time: 0.018306 seconds retry_i: 2 flip_i: 19 clauses_satisfied: 464
+
+time: 0.023733 seconds retry_i: 2 flip_i: 24 clauses_satisfied: 465
+
+time: 0.033629 seconds retry_i: 2 flip_i: 34 clauses_satisfied: 475
+
+time: 0.042040 seconds retry_i: 2 flip_i: 41 clauses_satisfied: 479
+
+time: 0.061277 seconds retry_i: 2 flip_i: 54 clauses_satisfied: 481
+
+time: 0.100473 seconds retry_i: 2 flip_i: 83 clauses_satisfied: 482
+
+time: 1.728401 seconds retry_i: 19 flip_i: 40 clauses_satisfied: 483
+(3747, 914, 206)
+best assignment: [True, False, True, True, False, False, False, True, True, False, False, True, True, True, True, True, False, True, False, True, False, True, True, False, True, False, True, True, True, False, True, False, False, True, True, True, True, True, False, False, True, False, True, True, False, True, True, False, True, False]
+number of satisfied clauses: 483
+time: 20.065095 seconds
+--------------------------------------------------
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.010164 seconds retry_i: 2 flip_i: 11 clauses_satisfied: 469
+
+time: 0.032339 seconds retry_i: 2 flip_i: 33 clauses_satisfied: 474
+
+time: 0.141692 seconds retry_i: 3 flip_i: 36 clauses_satisfied: 475
+
+time: 0.168387 seconds retry_i: 3 flip_i: 59 clauses_satisfied: 477
+
+time: 0.192345 seconds retry_i: 3 flip_i: 81 clauses_satisfied: 479
+
+time: 0.342999 seconds retry_i: 5 flip_i: 42 clauses_satisfied: 481
+
+time: 0.357434 seconds retry_i: 5 flip_i: 53 clauses_satisfied: 484
+
+time: 5.991205 seconds retry_i: 62 flip_i: 85 clauses_satisfied: 485
+(3770, 953, 205)
+best assignment: [False, False, True, False, True, False, False, False, True, False, True, False, False, False, False, True, False, True, False, False, True, False, True, False, True, True, True, True, False, True, True, True, False, True, False, True, True, False, True, False, True, False, False, False, True, True, False, True, True, False]
+number of satisfied clauses: 485
+time: 20.037565 seconds
+--------------------------------------------------
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.014317 seconds retry_i: 2 flip_i: 16 clauses_satisfied: 460
+
+time: 0.017575 seconds retry_i: 2 flip_i: 18 clauses_satisfied: 463
+
+time: 0.026480 seconds retry_i: 2 flip_i: 28 clauses_satisfied: 470
+
+time: 0.071201 seconds retry_i: 2 flip_i: 64 clauses_satisfied: 471
+
+time: 0.082053 seconds retry_i: 2 flip_i: 72 clauses_satisfied: 472
+
+time: 0.148712 seconds retry_i: 3 flip_i: 46 clauses_satisfied: 473
+
+time: 0.275563 seconds retry_i: 4 flip_i: 68 clauses_satisfied: 475
+
+time: 0.357843 seconds retry_i: 5 flip_i: 54 clauses_satisfied: 476
+
+time: 0.361794 seconds retry_i: 5 flip_i: 57 clauses_satisfied: 477
+
+time: 1.364941 seconds retry_i: 15 flip_i: 79 clauses_satisfied: 478
+
+time: 1.573900 seconds retry_i: 17 flip_i: 83 clauses_satisfied: 479
+
+time: 4.121237 seconds retry_i: 43 flip_i: 67 clauses_satisfied: 480
+(3724, 940, 204)
+best assignment: [True, False, False, False, False, False, True, True, False, False, True, False, True, False, False, True, True, True, True, False, True, False, True, True, False, False, False, False, False, True, True, True, False, True, False, False, False, True, False, True, False, True, False, True, False, False, False, False, True, False]
+number of satisfied clauses: 480
+time: 20.037596 seconds
+--------------------------------------------------
+max_steps: 100
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.012436 seconds retry_i: 2 flip_i: 15 clauses_satisfied: 468
+
+time: 0.018070 seconds retry_i: 2 flip_i: 20 clauses_satisfied: 471
+
+time: 0.036069 seconds retry_i: 2 flip_i: 38 clauses_satisfied: 479
+
+time: 0.102942 seconds retry_i: 2 flip_i: 96 clauses_satisfied: 481
+
+time: 0.250399 seconds retry_i: 4 flip_i: 42 clauses_satisfied: 482
+
+time: 2.495011 seconds retry_i: 24 flip_i: 86 clauses_satisfied: 483
+
+time: 2.500311 seconds retry_i: 24 flip_i: 90 clauses_satisfied: 484
+(3853, 910, 185)
+best assignment: [True, False, True, True, False, False, False, True, True, False, False, True, True, True, True, True, False, True, False, True, False, True, False, False, True, False, True, True, True, False, True, False, False, True, True, True, True, True, False, False, True, False, True, True, False, True, True, False, False, False]
+number of satisfied clauses: 484
+time: 20.071167 seconds
+--------------------------------------------------
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.005287 seconds retry_i: 2 flip_i: 6 clauses_satisfied: 447
+
+time: 0.019070 seconds retry_i: 2 flip_i: 18 clauses_satisfied: 454
+
+time: 0.024903 seconds retry_i: 2 flip_i: 24 clauses_satisfied: 462
+
+time: 0.039630 seconds retry_i: 2 flip_i: 37 clauses_satisfied: 463
+
+time: 0.048842 seconds retry_i: 2 flip_i: 46 clauses_satisfied: 469
+
+time: 0.054330 seconds retry_i: 2 flip_i: 51 clauses_satisfied: 473
+
+time: 0.065245 seconds retry_i: 2 flip_i: 62 clauses_satisfied: 477
+
+time: 0.075881 seconds retry_i: 2 flip_i: 69 clauses_satisfied: 478
+
+time: 0.082598 seconds retry_i: 2 flip_i: 76 clauses_satisfied: 481
+
+time: 0.496209 seconds retry_i: 6 flip_i: 60 clauses_satisfied: 482
+
+time: 0.508254 seconds retry_i: 6 flip_i: 70 clauses_satisfied: 484
+
+time: 3.640149 seconds retry_i: 34 flip_i: 97 clauses_satisfied: 485
+(3684, 976, 185)
+best assignment: [False, True, True, False, True, False, False, False, True, False, True, False, False, False, False, True, True, True, False, False, True, False, True, True, True, True, True, True, False, True, True, True, False, True, False, True, True, False, True, False, True, False, False, True, True, True, False, True, True, False]
+number of satisfied clauses: 485
+time: 20.027175 seconds
+--------------------------------------------------
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.017831 seconds retry_i: 2 flip_i: 21 clauses_satisfied: 461
+
+time: 0.032738 seconds retry_i: 2 flip_i: 34 clauses_satisfied: 468
+
+time: 0.065647 seconds retry_i: 2 flip_i: 60 clauses_satisfied: 469
+
+time: 0.073489 seconds retry_i: 2 flip_i: 65 clauses_satisfied: 470
+
+time: 0.077376 seconds retry_i: 2 flip_i: 68 clauses_satisfied: 471
+
+time: 0.082874 seconds retry_i: 2 flip_i: 73 clauses_satisfied: 472
+
+time: 0.152136 seconds retry_i: 3 flip_i: 34 clauses_satisfied: 473
+
+time: 0.172264 seconds retry_i: 3 flip_i: 51 clauses_satisfied: 476
+
+time: 0.192680 seconds retry_i: 3 flip_i: 66 clauses_satisfied: 477
+
+time: 0.201536 seconds retry_i: 3 flip_i: 74 clauses_satisfied: 478
+
+time: 1.185977 seconds retry_i: 12 flip_i: 62 clauses_satisfied: 479
+
+time: 4.339232 seconds retry_i: 40 flip_i: 99 clauses_satisfied: 481
+(3794, 957, 183)
+best assignment: [True, True, True, False, False, False, True, True, False, False, False, False, True, False, False, True, True, False, True, False, True, False, True, True, True, False, False, True, False, False, False, True, False, True, True, True, False, True, True, False, True, True, False, False, True, False, True, False, True, False]
+number of satisfied clauses: 481
+time: 20.093534 seconds
+--------------------------------------------------
+max_steps: 110
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.008186 seconds retry_i: 2 flip_i: 7 clauses_satisfied: 468
+
+time: 0.014530 seconds retry_i: 2 flip_i: 13 clauses_satisfied: 470
+
+time: 0.022539 seconds retry_i: 2 flip_i: 19 clauses_satisfied: 472
+
+time: 0.034424 seconds retry_i: 2 flip_i: 32 clauses_satisfied: 474
+
+time: 0.039852 seconds retry_i: 2 flip_i: 37 clauses_satisfied: 475
+
+time: 0.047872 seconds retry_i: 2 flip_i: 43 clauses_satisfied: 477
+
+time: 0.054813 seconds retry_i: 2 flip_i: 50 clauses_satisfied: 478
+
+time: 0.068712 seconds retry_i: 2 flip_i: 62 clauses_satisfied: 481
+
+time: 0.224601 seconds retry_i: 3 flip_i: 96 clauses_satisfied: 482
+
+time: 1.361505 seconds retry_i: 12 flip_i: 105 clauses_satisfied: 484
+(3894, 950, 167)
+best assignment: [True, False, True, True, False, False, False, True, True, False, False, True, True, True, True, True, False, True, True, True, False, True, True, False, True, False, True, True, True, False, True, False, False, True, True, True, True, True, False, False, True, False, True, True, False, True, True, False, True, False]
+number of satisfied clauses: 484
+time: 20.022938 seconds
+--------------------------------------------------
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.017664 seconds retry_i: 2 flip_i: 21 clauses_satisfied: 469
+
+time: 0.023550 seconds retry_i: 2 flip_i: 26 clauses_satisfied: 471
+
+time: 0.032737 seconds retry_i: 2 flip_i: 36 clauses_satisfied: 475
+
+time: 0.311174 seconds retry_i: 4 flip_i: 87 clauses_satisfied: 476
+
+time: 0.334456 seconds retry_i: 4 flip_i: 109 clauses_satisfied: 479
+
+time: 0.528449 seconds retry_i: 6 flip_i: 66 clauses_satisfied: 480
+
+time: 0.937840 seconds retry_i: 9 flip_i: 97 clauses_satisfied: 482
+
+time: 1.624861 seconds retry_i: 15 flip_i: 80 clauses_satisfied: 483
+
+time: 1.656836 seconds retry_i: 15 flip_i: 103 clauses_satisfied: 485
+(3754, 990, 166)
+best assignment: [False, False, True, False, True, False, False, True, True, True, True, False, False, False, False, True, True, False, True, False, True, False, True, False, True, True, True, True, False, True, True, True, False, True, False, True, True, False, True, False, True, False, False, True, True, True, False, True, True, False]
+number of satisfied clauses: 485
+time: 20.065231 seconds
+--------------------------------------------------
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.008534 seconds retry_i: 2 flip_i: 9 clauses_satisfied: 455
+
+time: 0.011573 seconds retry_i: 2 flip_i: 12 clauses_satisfied: 459
+
+time: 0.017154 seconds retry_i: 2 flip_i: 17 clauses_satisfied: 461
+
+time: 0.024433 seconds retry_i: 2 flip_i: 22 clauses_satisfied: 462
+
+time: 0.028495 seconds retry_i: 2 flip_i: 25 clauses_satisfied: 466
+
+time: 0.035061 seconds retry_i: 2 flip_i: 31 clauses_satisfied: 470
+
+time: 0.057862 seconds retry_i: 2 flip_i: 50 clauses_satisfied: 472
+
+time: 0.078125 seconds retry_i: 2 flip_i: 65 clauses_satisfied: 476
+
+time: 0.347511 seconds retry_i: 4 flip_i: 78 clauses_satisfied: 479
+
+time: 0.350951 seconds retry_i: 4 flip_i: 80 clauses_satisfied: 480
+(3920, 979, 166)
+best assignment: [True, False, False, True, False, False, True, True, False, False, False, False, True, False, False, True, True, True, True, True, True, False, True, True, True, False, False, False, False, True, True, True, False, True, False, True, False, True, False, True, False, True, False, True, True, False, False, False, True, False]
+number of satisfied clauses: 480
+time: 20.129854 seconds
+--------------------------------------------------
+max_steps: 120
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.010494 seconds retry_i: 2 flip_i: 11 clauses_satisfied: 446
+
+time: 0.020585 seconds retry_i: 2 flip_i: 23 clauses_satisfied: 457
+
+time: 0.038776 seconds retry_i: 2 flip_i: 46 clauses_satisfied: 472
+
+time: 0.070170 seconds retry_i: 2 flip_i: 72 clauses_satisfied: 475
+
+time: 0.083051 seconds retry_i: 2 flip_i: 84 clauses_satisfied: 477
+
+time: 0.185233 seconds retry_i: 3 flip_i: 61 clauses_satisfied: 480
+
+time: 0.826884 seconds retry_i: 8 flip_i: 40 clauses_satisfied: 481
+
+time: 1.074510 seconds retry_i: 10 flip_i: 33 clauses_satisfied: 482
+
+time: 2.086183 seconds retry_i: 17 flip_i: 109 clauses_satisfied: 483
+
+
+time: 5.144591 seconds retry_i: 40 flip_i: 91 clauses_satisfied: 484
+(4006, 1002, 155)
+best assignment: [True, False, True, True, False, False, False, True, True, False, False, True, True, True, True, True, False, True, True, True, False, True, True, False, True, False, True, True, True, False, True, False, False, True, True, True, True, True, False, False, True, False, True, True, False, True, True, False, True, False]
+number of satisfied clauses: 484
+time: 20.112981 seconds
+--------------------------------------------------
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.011012 seconds retry_i: 2 flip_i: 11 clauses_satisfied: 459
+
+time: 0.020690 seconds retry_i: 2 flip_i: 21 clauses_satisfied: 464
+
+time: 0.028333 seconds retry_i: 2 flip_i: 28 clauses_satisfied: 469
+
+time: 0.037171 seconds retry_i: 2 flip_i: 38 clauses_satisfied: 475
+
+time: 0.084380 seconds retry_i: 2 flip_i: 84 clauses_satisfied: 476
+
+time: 0.103438 seconds retry_i: 2 flip_i: 100 clauses_satisfied: 480
+
+time: 0.130420 seconds retry_i: 2 flip_i: 118 clauses_satisfied: 481
+
+time: 0.229904 seconds retry_i: 3 flip_i: 83 clauses_satisfied: 483
+
+time: 0.256828 seconds retry_i: 3 flip_i: 102 clauses_satisfied: 484
+
+time: 3.658999 seconds retry_i: 29 flip_i: 55 clauses_satisfied: 485
+(3919, 1041, 154)
+best assignment: [False, False, True, False, True, False, False, True, True, True, True, False, False, False, False, True, True, True, True, False, True, False, True, True, True, True, True, True, False, True, True, True, False, True, False, True, True, False, True, False, True, False, False, True, True, True, False, True, True, False]
+number of satisfied clauses: 485
+time: 20.107539 seconds
+--------------------------------------------------
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.008007 seconds retry_i: 2 flip_i: 6 clauses_satisfied: 458
+
+time: 0.012942 seconds retry_i: 2 flip_i: 11 clauses_satisfied: 464
+
+time: 0.024736 seconds retry_i: 2 flip_i: 23 clauses_satisfied: 472
+
+time: 0.039048 seconds retry_i: 2 flip_i: 33 clauses_satisfied: 473
+
+time: 0.086373 seconds retry_i: 2 flip_i: 73 clauses_satisfied: 475
+
+time: 0.093329 seconds retry_i: 2 flip_i: 78 clauses_satisfied: 477
+
+time: 0.095789 seconds retry_i: 2 flip_i: 80 clauses_satisfied: 478
+
+time: 0.618098 seconds retry_i: 6 flip_i: 63 clauses_satisfied: 479
+
+time: 5.523348 seconds retry_i: 43 flip_i: 103 clauses_satisfied: 480
+
+time: 12.283320 seconds retry_i: 94 flip_i: 75 clauses_satisfied: 481
+(4044, 1032, 153)
+best assignment: [True, True, True, False, False, False, True, True, False, False, False, False, True, False, False, True, True, False, True, False, True, False, True, True, True, False, False, True, False, False, True, True, False, True, True, False, False, True, True, False, True, True, False, False, True, True, True, False, True, False]
+number of satisfied clauses: 481
+time: 20.119256 seconds
+--------------------------------------------------
+max_steps: 130
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.013507 seconds retry_i: 2 flip_i: 12 clauses_satisfied: 460
+
+time: 0.022799 seconds retry_i: 2 flip_i: 21 clauses_satisfied: 474
+
+time: 0.044177 seconds retry_i: 2 flip_i: 41 clauses_satisfied: 475
+
+time: 0.054793 seconds retry_i: 2 flip_i: 50 clauses_satisfied: 477
+
+time: 0.057790 seconds retry_i: 2 flip_i: 52 clauses_satisfied: 479
+
+time: 0.079892 seconds retry_i: 2 flip_i: 72 clauses_satisfied: 480
+
+time: 0.089843 seconds retry_i: 2 flip_i: 79 clauses_satisfied: 481
+
+time: 1.542029 seconds retry_i: 12 flip_i: 102 clauses_satisfied: 484
+(3993, 1006, 143)
+best assignment: [True, False, True, True, False, False, False, True, True, False, False, True, True, True, True, True, False, True, False, True, False, False, False, False, True, False, True, True, True, False, True, False, False, True, True, True, True, True, False, False, True, False, True, True, False, True, True, False, True, False]
+number of satisfied clauses: 484
+time: 20.083849 seconds
+--------------------------------------------------
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.004036 seconds retry_i: 2 flip_i: 3 clauses_satisfied: 460
+
+time: 0.016411 seconds retry_i: 2 flip_i: 14 clauses_satisfied: 471
+
+time: 0.023443 seconds retry_i: 2 flip_i: 19 clauses_satisfied: 475
+
+time: 0.034255 seconds retry_i: 2 flip_i: 27 clauses_satisfied: 476
+
+time: 0.052255 seconds retry_i: 2 flip_i: 41 clauses_satisfied: 477
+
+time: 0.064492 seconds retry_i: 2 flip_i: 53 clauses_satisfied: 480
+
+time: 0.110042 seconds retry_i: 2 flip_i: 92 clauses_satisfied: 481
+
+time: 0.124538 seconds retry_i: 2 flip_i: 103 clauses_satisfied: 482
+
+time: 0.132593 seconds retry_i: 2 flip_i: 108 clauses_satisfied: 484
+
+time: 5.374185 seconds retry_i: 39 flip_i: 73 clauses_satisfied: 485
+
+(3902, 1044, 141)
+best assignment: [False, False, True, False, True, False, False, False, True, False, True, False, False, False, False, True, True, True, False, False, True, False, True, False, True, True, True, True, False, True, True, True, False, True, False, True, True, False, True, False, True, False, False, False, True, True, True, True, True, False]
+number of satisfied clauses: 485
+time: 20.114668 seconds
+--------------------------------------------------
+no_literals_clause: 3 no_clauses: 500 no_vars: 50
+
+time: 0.010741 seconds retry_i: 2 flip_i: 11 clauses_satisfied: 460
+
+time: 0.017111 seconds retry_i: 2 flip_i: 17 clauses_satisfied: 461
+
+time: 0.026902 seconds retry_i: 2 flip_i: 25 clauses_satisfied: 467
+
+time: 0.033136 seconds retry_i: 2 flip_i: 29 clauses_satisfied: 471
+
+time: 0.112330 seconds retry_i: 2 flip_i: 95 clauses_satisfied: 473
+
+time: 0.130068 seconds retry_i: 2 flip_i: 111 clauses_satisfied: 475
+
+time: 0.331715 seconds retry_i: 4 flip_i: 46 clauses_satisfied: 476
+
+time: 0.471615 seconds retry_i: 5 flip_i: 43 clauses_satisfied: 478
+
+time: 0.494775 seconds retry_i: 5 flip_i: 61 clauses_satisfied: 479
+
+time: 0.568833 seconds retry_i: 5 flip_i: 126 clauses_satisfied: 480
+
+time: 0.964479 seconds retry_i: 8 flip_i: 100 clauses_satisfied: 481
+^C
+early terminating the best results are:
+best assignment: [True, True, True, False, False, True, True, True, False, False, False, False, True, False, False, True, True, False, True, False, True, False, True, True, True, False, False, True, False, False, True, True, False, True, True, True, False, True, True, False, True, True, False, False, True, True, True, False, True, False]
+number of satisfied clauses: 481
+time: 11.367002 seconds
