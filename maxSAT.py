@@ -144,7 +144,7 @@ class MAXSatSolver():
         return self.best_assignment
 
 if __name__ == "__main__":
-    s = MAXSatSolver(10, 1000, 0.25)
+    s = MAXSatSolver(120, 1000, 0.25)
 
     # no_vars = 3
     # cnf = [(3, -1), (-3, 2)]
@@ -160,11 +160,11 @@ if __name__ == "__main__":
     # s.solveCNF(no_vars, 2, 5, cnf)
 
     # # NOTE: use below to test the performance
-    # no_vars = 100
+    # no_vars = 1000
     # cnf = [[i, ] if i%2 else [-i,] for i in range(1, no_vars+1)]
     # s.solveCNF(no_vars, 1, no_vars, cnf)
 
-    # no_vars = 100
+    # no_vars = 1000
     # cnf = [[i, ] for i in range(1, no_vars+1)]
     # s.solveCNF(no_vars, 1, no_vars, cnf)
     s.solveCNFFiles()
