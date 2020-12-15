@@ -1,5 +1,5 @@
 - [ ] TODO:
-    - [ ] implement and exit and return the current best result option in the code.
+    - [x] implement and exit and return the current best result option in the code.
 
 - [ ] lecture: 
 
@@ -26,11 +26,11 @@
 
 
 
-- [ ] find the optimal value of the p
-    - [ ] reserach online
-        - [ ] can't find yet
-    - [ ] experimentation
-- [ ] compare with the greedy approach
+- [x] find the optimal value of the p
+    - [x] reserach online
+        - [ ] found it must be 0.1 https://1library.net/document/q05xp6gy-enhanced-walksat-finite-learning-automata-max-sat.html
+    - [ ] experimentation verified partially
+- [x] compare with the greedy approach
 - [ ] compare with simulated annealing
     - [ ] did't work
 

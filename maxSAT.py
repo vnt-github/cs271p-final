@@ -2,13 +2,13 @@ import sys
 import traceback
 from time import time
 from glob import glob
-from random import random, sample
+from random import random, sample, seed
 
 class MAXSatSolver():
     """
     a max sat solver
     """
-    def __init__(self, timeout_duration_sec, max_flips=1000, noise=0.25):
+    def __init__(self, timeout_duration_sec, max_flips=1000, noise=0.1):
         self.cnf = []
         self.best_assignment = None
         self.no_vars = None
@@ -17,6 +17,7 @@ class MAXSatSolver():
         self.timeout_duration_sec = timeout_duration_sec
         self.max_flips = max_flips
         self.noise = noise
+        seed()
     
     def _solve(self):
         # everyting is initialized this function logs the final output on success or on interrpt or on timeout
@@ -43,7 +44,7 @@ class MAXSatSolver():
         self.no_clauses = no_clauses
         self.cnf = cnf
         print('no_literals_clause: {} no_clauses: {} no_vars: {}'.format(self.no_literals_clause, self.no_clauses, self.no_vars))
-        print('cnf', self.cnf)
+        # print('cnf', self.cnf)
         self._solve()
 
 
@@ -77,6 +78,8 @@ class MAXSatSolver():
         return max(0, before_flip - after_flip)
 
     def randomInitialTruthAssignment(self):
+        # NOTE: experimentational data with all true and all false assignment, aligns with logical inference of setting equal probability of true and false for the best result
+        # as the steps to reach the maxima for the initial assignment will be lower in equi distributed true false assignment.
         return [random() > 0.5 for _ in range(self.no_vars)]
 
     def satisfiedCount(self, assignment):
@@ -187,4 +190,9 @@ if __name__ == "__main__":
     # no_vars = 2
     # cnf = [(1 ,2), (-1, -2), (1 ,-2), (-1 ,2)]
     # s.solveCNF(no_vars, 2, 4, cnf)
+    # for noise in range(1, 16, 1):
+    #     n = noise/100.0
+    #     print('noise:', n)
+    #     s = MAXSatSolver(60, 1000, n)
+    #     s.solveCNFFiles()
 

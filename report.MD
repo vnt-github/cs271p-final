@@ -8,6 +8,8 @@
 
 - [ ] how you did improve you algo based on the observations of results
 - [ ] how you'd improve further.
+    - [ ] https://1library.net/document/q05xp6gy-enhanced-walksat-finite-learning-automata-max-sat.html
+    - [ ] might use 2 or 3 flips instead of 1 flip as it's shown to give better results
 
 
 - to verify the validity of our max sat solver we created custom test cases as follows
@@ -49,6 +51,13 @@
                 - we have validated the max sat with 2 satisfiable 20_3_100 and 1 unsatisfiable 20_3_100 and i unsatisfiable 3_3_100 clauses configuration and we've compared the results with rc2 of pysat2, and it's correct
                 - during this we've found that WE NEED TO CHECK THE FIRST INITIAL RANDOM ASSIGNMENT BEFORE FLIPPING, COS IF WE DON'T THEN WE ARE MISSING OUT ON A POTENTIAL BEST ASSIGNMENT.
 
-- optimum value of the noise
+- random initial assignment more true or more false
+    - for satisfiable cnf the initial assignment always converges
+    - for unsatisfiable the cnf with either all false or all true often does'nt results in lesser number of satisfied clauses
+
+- optimum value of the noise 
+    - 0.1 https://1library.net/document/q05xp6gy-enhanced-walksat-finite-learning-automata-max-sat.html
+        - Noise probability: The performance of WSAT depends highly on the walking probability setting which in turns depends on the class of problems to be solved. The plots in Figures 3-4 show 2 selected tests that reflect the general trend observed on almost all the industrial instances tested. Peak performance with respect to the lowest number of unsatisfied clauses is achieved when the walking probability was set to 10.
     - greedy
     - random
+    - we've also conducted some experiments and we've found similar results.
