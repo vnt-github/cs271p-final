@@ -91,3 +91,14 @@ professor will grade the project himself
 
 - [ ] write docstring
 - [ ] write how to operate.. ie early terminate ctrl+c
+
+
+- reset max_steps on found
+- set to remember tried inits
+    - see if any improvement
+    - remebered the already tried init value
+        - no effect it's always the same
+
+- again experiment with max_flips to no_clauses/2 etc
+
+- write results to a file

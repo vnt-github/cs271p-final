@@ -26,7 +26,7 @@ class MAXSatSolver():
             init = time()
             self.best_assignment = None
             # NOTE: by our observation of all true and alternte true, false n clauses cnf we need at least n/2 max_flips for best performance for satisfiable clauses
-            self.max_flips = self.no_vars/2 + 1
+            self.max_flips = self.no_clauses/2 + 1
             self.maxWalkSAT()
         except KeyboardInterrupt:
             print("\nearly terminating the best results are:")
@@ -44,12 +44,13 @@ class MAXSatSolver():
         self.no_clauses = no_clauses
         self.cnf = cnf
         print('no_literals_clause: {} no_clauses: {} no_vars: {}'.format(self.no_literals_clause, self.no_clauses, self.no_vars))
+        print('time| clauses_satisfied| retry_i| flip_i|')
         # print('cnf', self.cnf)
         self._solve()
 
 
     def solveCNFFiles(self):
-        for file_name in glob('tests/max-sat-problem-*.txt'):
+        for file_name in glob('tests/benchmarks/max-sat-problem-*.txt'):
             with open(file_name) as file:
                 data = file.readlines()
                 self.no_vars = int(data[0])
@@ -66,16 +67,23 @@ class MAXSatSolver():
 
     def isClauseSatisfied(self, clause, assignment):
         for var in clause:
-            if var < 0 and assignment[abs(var)-1] == False or var > 0 and assignment[abs(var)-1] == True:
+            if (var < 0 and assignment[abs(var)-1] == False) or (var > 0 and assignment[abs(var)-1] == True):
                 return True
         return False
 
     def breakCount(self, assignment, var):
-        before_flip = self.satisfiedCount(assignment)
+        before_flip_assignment = assignment[:]
         self.flip(assignment, var)
-        after_flip = self.satisfiedCount(assignment)
+        after_flip_assignment = assignment[:]
         self.flip(assignment, var)
-        return max(0, before_flip - after_flip)
+
+        break_count = 0
+
+        for clause in self.cnf:
+            if self.isClauseSatisfied(clause, before_flip_assignment) and not self.isClauseSatisfied(clause, after_flip_assignment):
+                break_count += 1
+
+        return break_count
 
     def randomInitialTruthAssignment(self):
         # NOTE: experimentational data with all true and all false assignment, aligns with logical inference of setting equal probability of true and false for the best result
@@ -130,20 +138,19 @@ class MAXSatSolver():
                     self.objective_function(curr_assignment)
                     self.best_assignment = curr_assignment[:]
                     print(greedy, randoms)
+                    print "%2.6f" % (time()-init), self.satisfiedCount(curr_assignment), retry_i, flip_i
                     return self.best_assignment
             
                 clause = self.getRandomUnsatisfiedClause(curr_assignment)
 
                 var_id = self.getFreeMove(clause, curr_assignment)
-                if var_id:
-                    self.flip(curr_assignment, var_id)
-                    continue
-                elif random() < self.noise:
-                    randoms += 1
-                    var_id = self.getRandomClauseVar(clause)
-                else:
-                    greedy += 1
-                    var_id = self.getGreedyClauseVar(curr_assignment, clause)
+                if not var_id:
+                    if random() < self.noise:
+                        randoms += 1
+                        var_id = self.getRandomClauseVar(clause)
+                    else:
+                        greedy += 1
+                        var_id = self.getGreedyClauseVar(curr_assignment, clause)
 
                 # NOTE: this is the case to handle if the first random initial assignment has a more clauses satisfied before fliping
                 # observer in the 'cnf': [(1, 2, 3), (-2, -1, 3), (1, -3, 2), (1, 2, -3), (1, -2, -3), (2, -3, 1), (-3, 1, -2), (-2, 3, -1), (-3, -1, -2), (-1, -2, 3), (2, -3, 1), (-1, -2, 3), (2, -1, -3), (-3, 1, 2), (2, 3, -1), (1, 3, -2), (3, -2, 1), (2, 3, 1), (-1, -3, -2), (-2, 3, 1), (-2, 1, 3), (1, 2, 3), (-3, 2, 1), (-3, -2, 1), (-1, 3, -2), (2, 3, -1), (-2, -3, 1), (-2, -1, 3), (-2, 1, 3), (-2, -3, -1), (2, -3, 1), (-1, -3, 2), (-1, 2, 3), (-3, -1, 2), (-2, 1, -3), (-1, -2, 3), (-2, -3, -1), (3, -1, 2), (-2, 3, 1), (-2, 1, -3), (2, -3, -1), (3, -2, -1), (-1, -3, -2), (-1, 2, 3), (-2, 1, 3), (1, -3, -2), (2, 1, -3), (-3, -1, 2), (-3, -2, 1), (-3, -1, -2), (2, 1, -3), (1, 3, 2), (1, -2, 3), (-3, 2, -1), (1, -2, 3), (-1, 2, -3), (-2, -1, 3), (-3, 1, -2), (-2, 3, 1), (-1, -2, -3), (2, 3, 1), (-2, 1, -3), (-2, -1, -3), (2, 1, -3), (-2, -1, 3), (1, 2, -3), (-1, -2, 3), (-3, -2, -1), (-2, -1, -3), (2, 3, 1), (1, -3, -2), (-1, 2, 3), (-1, -3, 2), (-1, -3, 2), (3, 1, 2), (-2, -1, 3), (3, -1, -2), (-1, -3, -2), (-1, 3, -2), (2, -3, -1), (1, 3, 2), (3, -1, -2), (2, 3, 1), (2, 1, -3), (2, -1, 3), (3, 2, 1), (-1, -3, 2), (-3, 2, 1), (-1, -3, -2), (-2, 3, -1), (2, -1, -3), (3, -1, 2), (-3, 2, 1), (3, -2, -1), (-1, -3, -2), (2, -1, -3), (-3, 2, -1), (-3, 2, 1), (-1, 3, 2), (-3, -2, 1)]
@@ -175,7 +182,7 @@ if __name__ == "__main__":
     #     cnf = [[i, ] if i%2 else [-i,] for i in range(1, no_vars+1)]
     #     s.solveCNF(no_vars, 1, no_vars, cnf)
     
-    s = MAXSatSolver(10)
+    s = MAXSatSolver(180)
     # for _ in range(10):
     #     no_vars = 3
     #     cnf = [(3, -1), (-3, 2)]
