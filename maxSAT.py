@@ -9,7 +9,7 @@ class MAXSatSolver():
     """
     a max sat solver object
     """
-    def __init__(self, timeout_duration_sec, max_flips=1000, noise=0.1):
+    def __init__(self, timeout_duration_sec, max_flips=1000, noise=0.1, log=False):
         """
         a constructor for max sat solver
         
@@ -27,6 +27,7 @@ class MAXSatSolver():
         self.max_flips = max_flips
         self.noise = noise
         self.tried_count = Counter()
+        self.log = log
         seed()
     
     def _solve(self):
@@ -67,8 +68,9 @@ class MAXSatSolver():
         self.no_clauses = no_clauses
         self.cnf = cnf
         print('no_literals_clause: {} no_clauses: {} no_vars: {}'.format(self.no_literals_clause, self.no_clauses, self.no_vars))
-        print('cnf', self.cnf)
-        print('|time \t| # clauses_satisfied \t| retry_# \t| flip_#\t|')
+        if self.log:
+            print('cnf', self.cnf)
+            print('|time \t| # clauses_satisfied \t| retry_# \t| flip_#\t|')
         self._solve()
 
 
@@ -94,8 +96,9 @@ class MAXSatSolver():
                         if each:
                             self.cnf.append(tuple(map(int, each.split())))
                     print('no_literals_clause: {} no_clauses: {} no_vars: {}'.format(self.no_literals_clause, self.no_clauses, self.no_vars))
-                    print('cnf', self.cnf)
-                    print('|time \t| # clauses_satisfied \t| retry_# \t| flip_#\t|')
+                    if self.log:
+                        print('cnf', self.cnf)
+                        print('|time \t| # clauses_satisfied \t| retry_# \t| flip_#\t|')
                     self._solve()
             except Exception as err:
                 print "Error parsing some file in", absolute_path, "\nerr:", err
@@ -238,7 +241,8 @@ class MAXSatSolver():
                 if self.objective_function(curr_assignment) == 0:
                     self.objective_function(curr_assignment)
                     self.best_assignment = curr_assignment[:]
-                    print "%2.6f" % (time()-init), "\t",self.satisfiedCount(curr_assignment), "\t\t\t",retry_i, "\t\t",flip_i
+                    if self.log:
+                        print "%2.6f" % (time()-init), "\t",self.satisfiedCount(curr_assignment), "\t\t\t",retry_i, "\t\t",flip_i
                     return self.best_assignment
             
                 clause = self.getRandomUnsatisfiedClause(curr_assignment)
@@ -254,15 +258,16 @@ class MAXSatSolver():
                 # observer in the 'cnf': [(1, 2, 3), (-2, -1, 3), (1, -3, 2), (1, 2, -3), (1, -2, -3), (2, -3, 1), (-3, 1, -2), (-2, 3, -1), (-3, -1, -2), (-1, -2, 3), (2, -3, 1), (-1, -2, 3), (2, -1, -3), (-3, 1, 2), (2, 3, -1), (1, 3, -2), (3, -2, 1), (2, 3, 1), (-1, -3, -2), (-2, 3, 1), (-2, 1, 3), (1, 2, 3), (-3, 2, 1), (-3, -2, 1), (-1, 3, -2), (2, 3, -1), (-2, -3, 1), (-2, -1, 3), (-2, 1, 3), (-2, -3, -1), (2, -3, 1), (-1, -3, 2), (-1, 2, 3), (-3, -1, 2), (-2, 1, -3), (-1, -2, 3), (-2, -3, -1), (3, -1, 2), (-2, 3, 1), (-2, 1, -3), (2, -3, -1), (3, -2, -1), (-1, -3, -2), (-1, 2, 3), (-2, 1, 3), (1, -3, -2), (2, 1, -3), (-3, -1, 2), (-3, -2, 1), (-3, -1, -2), (2, 1, -3), (1, 3, 2), (1, -2, 3), (-3, 2, -1), (1, -2, 3), (-1, 2, -3), (-2, -1, 3), (-3, 1, -2), (-2, 3, 1), (-1, -2, -3), (2, 3, 1), (-2, 1, -3), (-2, -1, -3), (2, 1, -3), (-2, -1, 3), (1, 2, -3), (-1, -2, 3), (-3, -2, -1), (-2, -1, -3), (2, 3, 1), (1, -3, -2), (-1, 2, 3), (-1, -3, 2), (-1, -3, 2), (3, 1, 2), (-2, -1, 3), (3, -1, -2), (-1, -3, -2), (-1, 3, -2), (2, -3, -1), (1, 3, 2), (3, -1, -2), (2, 3, 1), (2, 1, -3), (2, -1, 3), (3, 2, 1), (-1, -3, 2), (-3, 2, 1), (-1, -3, -2), (-2, 3, -1), (2, -1, -3), (3, -1, 2), (-3, 2, 1), (3, -2, -1), (-1, -3, -2), (2, -1, -3), (-3, 2, -1), (-3, 2, 1), (-1, 3, 2), (-3, -2, 1)]
                 # with [True, False, False] giving 91 satisfied clauses where [False, False, False] gives 90 satisfied clauses
                 if flip_i == 0 and self.objective_function(curr_assignment) < self.objective_function(self.best_assignment):
-                    print "%2.6f" % (time()-init), "\t",self.satisfiedCount(curr_assignment), "\t\t\t",retry_i, "\t\t",flip_i
-
-                    # print('retry_i: {} flip_i: {} prev_clauses_satisfied: {} new_clauses_satisfied: {}'.format(retry_i, flip_i, self.satisfiedCount(self.best_assignment), self.satisfiedCount(curr_assignment)))
+                    if self.log:
+                        print "%2.6f" % (time()-init), "\t",self.satisfiedCount(curr_assignment), "\t\t\t",retry_i, "\t\t",flip_i
+                        # print('retry_i: {} flip_i: {} prev_clauses_satisfied: {} new_clauses_satisfied: {}'.format(retry_i, flip_i, self.satisfiedCount(self.best_assignment), self.satisfiedCount(curr_assignment)))
                     self.best_assignment = curr_assignment[:]
 
                 self.flip(curr_assignment, var_id)
                 if self.objective_function(curr_assignment) < self.objective_function(self.best_assignment):
-                    print "%2.6f" % (time()-init), "\t",self.satisfiedCount(curr_assignment), "\t\t\t",retry_i, "\t\t",flip_i
-                    # print('retry_i: {} flip_i: {} prev_clauses_satisfied: {} new_clauses_satisfied: {}'.format(retry_i, flip_i, self.satisfiedCount(self.best_assignment), self.satisfiedCount(curr_assignment)))
+                    if self.log:
+                        print "%2.6f" % (time()-init), "\t",self.satisfiedCount(curr_assignment), "\t\t\t",retry_i, "\t\t",flip_i
+                        # print('retry_i: {} flip_i: {} prev_clauses_satisfied: {} new_clauses_satisfied: {}'.format(retry_i, flip_i, self.satisfiedCount(self.best_assignment), self.satisfiedCount(curr_assignment)))
                     self.best_assignment = curr_assignment[:]
 
         return self.best_assignment
@@ -276,12 +281,13 @@ def main():
 
     required.add_argument("-d", "--absolute_path", help="absolute path of the directory containing MAX-SAT problem files as defined in the generator", required=True)
     
-    optional.add_argument("-t", "--timeout_in_seconds", help="maximum run time in seconds for each problem file", required=False, default=10)
+    optional.add_argument("-t", "--timeout_in_seconds", help="maximum run time in seconds for each problem file", required=False, default=900)
     optional.add_argument('-p', "--noise", help="noise probability of random move", required=False, type=float, default=0.1)
     optional.add_argument('-m', "--max_flips", help="max flips allowed for each try", required=False, type=int, default=1000)
+    optional.add_argument('-v', "--verbose", help="log each improvement step with extra info", required=False, type=bool, default=False)
 
     args = parser.parse_args()
-    s = MAXSatSolver(args.timeout_in_seconds, args.max_flips, args.noise)
+    s = MAXSatSolver(args.timeout_in_seconds, args.max_flips, args.noise, args.verbose)
     s.solveCNFFiles(args.absolute_path)
 
 if __name__ == "__main__":
