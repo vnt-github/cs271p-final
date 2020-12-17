@@ -48,7 +48,7 @@
                 - cnf: [(3, -1), (-3, 2)] = TODO: ask if its correct [(-1, 2)]
                 - the above cnf always generate correct random results on different runs
             - larger generator results verified the assignment with rc2 pysat
-                - we have validated the max sat with 2 satisfiable 20_3_100 and 1 unsatisfiable 20_3_100 and i unsatisfiable 3_3_100 clauses configuration and we've compared the results with rc2 of pysat2, and it's correct
+                - we have validated the max sat with 2 satisfiable 20_3_100 and 1 unsatisfiable 20_3_100 and 1 unsatisfiable 3_3_100 clauses configuration and we've compared the results with rc2 of pysat2, and it's correct
                 - during this we've found that WE NEED TO CHECK THE FIRST INITIAL RANDOM ASSIGNMENT BEFORE FLIPPING, COS IF WE DON'T THEN WE ARE MISSING OUT ON A POTENTIAL BEST ASSIGNMENT.
 
 - random initial assignment more true or more false
