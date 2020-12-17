@@ -238,6 +238,7 @@ class MAXSatSolver():
                 self.best_assignment = curr_assignment[:]
             
             for flip_i in range(self.max_flips):
+                if time() > timeout: break
                 if self.objective_function(curr_assignment) == 0:
                     self.objective_function(curr_assignment)
                     self.best_assignment = curr_assignment[:]
@@ -281,7 +282,7 @@ def main():
 
     required.add_argument("-d", "--absolute_path", help="absolute path of the directory containing MAX-SAT problem files as defined in the generator", required=True)
     
-    optional.add_argument("-t", "--timeout_in_seconds", help="maximum run time in seconds for each problem file", required=False, default=900)
+    optional.add_argument("-t", "--timeout_in_seconds", help="maximum run time in seconds for each problem file", required=False, type=int, default=10)
     optional.add_argument('-p', "--noise", help="noise probability of random move", required=False, type=float, default=0.1)
     optional.add_argument('-m', "--max_flips", help="max flips allowed for each try", required=False, type=int, default=1000)
     optional.add_argument('-v', "--verbose", help="log each improvement step with extra info", required=False, type=bool, default=False)
