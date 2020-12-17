@@ -4,6 +4,7 @@ import argparse
 from time import time
 from glob import glob
 from random import random, sample, seed
+from collections import Counter
 class MAXSatSolver():
     """
     a max sat solver object
@@ -25,6 +26,7 @@ class MAXSatSolver():
         self.timeout_duration_sec = timeout_duration_sec
         self.max_flips = max_flips
         self.noise = noise
+        self.tried_count = Counter()
         seed()
     
     def _solve(self):
@@ -38,6 +40,7 @@ class MAXSatSolver():
             self.best_assignment = None
             # NOTE: by our observation of all true and alternte true, false n clauses cnf we need at least n/2 max_flips for best performance for satisfiable clauses
             self.max_flips = self.no_clauses/2 + 1
+            self.tried_count = Counter()
             self.maxWalkSAT()
         except KeyboardInterrupt:
             print("\nearly terminating the best results are:")
@@ -127,13 +130,41 @@ class MAXSatSolver():
 
         return break_count
 
+    def getCompressedKey(self, assignment):
+        """
+        get compressed key to check to avoid retried initial assignment with lower probabililty
+        """
+        key = []
+        prev = assignment[0]
+        count = 0
+        for each in assignment:
+            if prev == each:
+                count += 1
+            else:
+                key.append(('1' if not each else '0') + str(count))
+                count = 1
+                prev = each
+        if count:
+            key.append(('1' if each else '0') + str(count))
+
+        return '_'.join(key)
+        
     def randomInitialTruthAssignment(self):
         """
         get a initial random truth assignment
         """
         # NOTE: experimentational data with all true and all false assignment, aligns with logical inference of setting equal probability of true and false for the best result
         # as the steps to reach the maxima for the initial assignment will be lower in equi distributed true false assignment.
-        return [random() > 0.5 for _ in range(self.no_vars)]
+        init = [random() > 0.5 for _ in range(self.no_vars)]
+        compressed_key = self.getCompressedKey(init)
+        self.tried_count[compressed_key] += 1
+        max_attempts = 10
+        while max_attempts and 1.0/self.tried_count[compressed_key] < random():
+            max_attempts -= 1
+            init = [random() > 0.5 for _ in range(self.no_vars)]
+            compressed_key = self.getCompressedKey(init)
+            self.tried_count[compressed_key] += 1
+        return init
 
     def satisfiedCount(self, assignment):
         """
@@ -255,11 +286,17 @@ def main():
 
 if __name__ == "__main__":
     main()
+    # s = MAXSatSolver(10)
+
+    # print(s.getCompressedKey([True, False, True, False]))
+    # print(s.getCompressedKey([True, True, True, True]))
+    # print(s.getCompressedKey([True, True, False, False, True]))
+    # print(s.getCompressedKey([True, False, False, False, True, False]))
     # for max_steps in range(10, 150, 10):
     #     print('max_steps: {}'.format(max_steps))
     #     s = MAXSatSolver(30, max_steps, 0.2)
     #     s.solveCNFFiles()
-      
+   
     # no_vars = 100
     # for max_steps in range(10, no_vars, 10):
     #     print 'max_steps:', max_steps
