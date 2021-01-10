@@ -48,7 +48,7 @@ class MAXSatSolver():
 
         except Exception:
             traceback.print_exc(file=sys.stdout)
-        print("best assignment: {}".format(self.best_assignment))
+        # print("best assignment: {}".format(self.best_assignment))
         print("number of satisfied clauses: {}".format(self.satisfiedCount(self.best_assignment)))
         print("time: %2.6f seconds" % ((time()-init)))
         print('-'*50)
